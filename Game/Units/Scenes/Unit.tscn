@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Units/Assets/00.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Game/Board/Assets/Tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Game/Units/Scripts/Unit.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30, 30 )
+
+[node name="Unit" type="Area2D"]
+z_index = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Moves" type="TileMap" parent="."]
+visible = false
+modulate = Color( 1, 0, 0, 0.0392157 )
+position = Vector2( -30, -30 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 60, 60 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -1, -1073741824, 0, -65536, -1073741824, 0, -65535, -1073741824, 0, 65535, -1073741824, 0, 1, -1073741824, 0, 131071, -1073741824, 0, 65536, -1073741824, 0, 65537, -1073741824, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Anim" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+frames = ExtResource( 1 )
+speed_scale = 1.5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Icon" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )

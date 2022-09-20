@@ -1,0 +1,285 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://MainMenu/Scripts/menuMake.gd" type="Script" id=1]
+
+[node name="menuMake" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VBox" type="VBoxContainer" parent="."]
+margin_left = 232.0
+margin_top = 140.0
+margin_right = 792.0
+margin_bottom = 460.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 50
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panels" type="HBoxContainer" parent="VBox"]
+margin_right = 560.0
+margin_bottom = 250.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+custom_constants/separation = 60
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Host" type="PanelContainer" parent="VBox/Panels"]
+margin_right = 250.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 250, 250 )
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="HBox" type="HBoxContainer" parent="VBox/Panels/Host"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 243.0
+margin_bottom = 243.0
+
+[node name="edgeLeft" type="VSeparator" parent="VBox/Panels/Host/HBox"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 4.0
+margin_bottom = 236.0
+
+[node name="Menu" type="VBoxContainer" parent="VBox/Panels/Host/HBox"]
+margin_left = 8.0
+margin_right = 228.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+
+[node name="Space0" type="HSeparator" parent="VBox/Panels/Host/HBox/Menu"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0 )
+margin_right = 220.0
+margin_bottom = 5.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Title" type="Label" parent="VBox/Panels/Host/HBox/Menu"]
+margin_top = 15.0
+margin_right = 220.0
+margin_bottom = 29.0
+text = "Host a Match"
+align = 1
+valign = 1
+
+[node name="Space1" type="HSeparator" parent="VBox/Panels/Host/HBox/Menu"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0 )
+margin_top = 39.0
+margin_right = 220.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Name_Input" type="TextEdit" parent="VBox/Panels/Host/HBox/Menu"]
+margin_top = 54.0
+margin_right = 220.0
+margin_bottom = 73.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Name_Label" type="Label" parent="VBox/Panels/Host/HBox/Menu"]
+margin_left = 70.0
+margin_top = 85.0
+margin_right = 149.0
+margin_bottom = 99.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Room Name"
+
+[node name="Space2" type="HSeparator" parent="VBox/Panels/Host/HBox/Menu"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0 )
+margin_top = 112.0
+margin_right = 220.0
+margin_bottom = 117.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Pass_Input" type="TextEdit" parent="VBox/Panels/Host/HBox/Menu"]
+margin_top = 127.0
+margin_right = 220.0
+margin_bottom = 146.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Pass_Label" type="Label" parent="VBox/Panels/Host/HBox/Menu"]
+margin_left = 80.0
+margin_top = 159.0
+margin_right = 140.0
+margin_bottom = 173.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Password"
+
+[node name="Space3" type="HSeparator" parent="VBox/Panels/Host/HBox/Menu"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0 )
+margin_top = 186.0
+margin_right = 220.0
+margin_bottom = 191.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Button" type="Button" parent="VBox/Panels/Host/HBox/Menu"]
+margin_top = 201.0
+margin_right = 220.0
+margin_bottom = 221.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.662745, 0.431373, 0.431373, 1 )
+text = "Make Room"
+
+[node name="Space4" type="HSeparator" parent="VBox/Panels/Host/HBox/Menu"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0 )
+margin_top = 231.0
+margin_right = 220.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="edgeRight" type="VSeparator" parent="VBox/Panels/Host/HBox"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 232.0
+margin_right = 236.0
+margin_bottom = 236.0
+
+[node name="Guest" type="PanelContainer" parent="VBox/Panels"]
+margin_left = 310.0
+margin_right = 560.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 250, 250 )
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="HBox" type="HBoxContainer" parent="VBox/Panels/Guest"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 243.0
+margin_bottom = 243.0
+
+[node name="edgeLeft" type="VSeparator" parent="VBox/Panels/Guest/HBox"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 4.0
+margin_bottom = 236.0
+
+[node name="Menu" type="VBoxContainer" parent="VBox/Panels/Guest/HBox"]
+margin_left = 8.0
+margin_right = 228.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+
+[node name="Space0" type="HSeparator" parent="VBox/Panels/Guest/HBox/Menu"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0 )
+margin_right = 220.0
+margin_bottom = 5.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Title" type="Label" parent="VBox/Panels/Guest/HBox/Menu"]
+margin_top = 15.0
+margin_right = 220.0
+margin_bottom = 29.0
+text = "Join a Match"
+align = 1
+valign = 1
+
+[node name="Space1" type="HSeparator" parent="VBox/Panels/Guest/HBox/Menu"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0 )
+margin_top = 39.0
+margin_right = 220.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Name_Input" type="TextEdit" parent="VBox/Panels/Guest/HBox/Menu"]
+margin_top = 54.0
+margin_right = 220.0
+margin_bottom = 73.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Name_Label" type="Label" parent="VBox/Panels/Guest/HBox/Menu"]
+margin_left = 70.0
+margin_top = 85.0
+margin_right = 149.0
+margin_bottom = 99.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Room Name"
+
+[node name="Space2" type="HSeparator" parent="VBox/Panels/Guest/HBox/Menu"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0 )
+margin_top = 112.0
+margin_right = 220.0
+margin_bottom = 117.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Pass_Input" type="TextEdit" parent="VBox/Panels/Guest/HBox/Menu"]
+margin_top = 127.0
+margin_right = 220.0
+margin_bottom = 146.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Pass_Label" type="Label" parent="VBox/Panels/Guest/HBox/Menu"]
+margin_left = 80.0
+margin_top = 159.0
+margin_right = 140.0
+margin_bottom = 173.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "Password"
+
+[node name="Space3" type="HSeparator" parent="VBox/Panels/Guest/HBox/Menu"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0 )
+margin_top = 186.0
+margin_right = 220.0
+margin_bottom = 191.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="Button" type="Button" parent="VBox/Panels/Guest/HBox/Menu"]
+margin_top = 201.0
+margin_right = 220.0
+margin_bottom = 221.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.662745, 0.431373, 0.431373, 1 )
+text = "Join Room"
+
+[node name="Space4" type="HSeparator" parent="VBox/Panels/Guest/HBox/Menu"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 0, 0, 0, 0 )
+margin_top = 231.0
+margin_right = 220.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 0, 5 )
+
+[node name="edgeRight" type="VSeparator" parent="VBox/Panels/Guest/HBox"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 232.0
+margin_right = 236.0
+margin_bottom = 236.0
+
+[node name="Cancel" type="Button" parent="VBox"]
+margin_top = 300.0
+margin_right = 560.0
+margin_bottom = 320.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+text = "Cancel"
+__meta__ = {
+"_edit_lock_": true
+}
