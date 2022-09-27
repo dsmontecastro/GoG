@@ -1,7 +1,10 @@
 extends Area2D
 
 # Differentiate White/Black Teams
-onready var isHost = GlobalSteam.isHost
+onready var isHost = USER.isHost
+
+# Scenes
+var unitScene = preload("res://Game/Units/Scenes/Unit.tscn")
 
 # Tilemap Specs
 onready var tiles = $Tiles
@@ -13,14 +16,7 @@ var specs = Vector2.ZERO
 var grid = []
 
 
-# Reset Functions
-func resetMap():
-	for node in tiles.get_children():
-		tiles.remove_child(node)
-		node.queue_free()
-
-
-# Cell-check Functions
+# Ready Functions
 func isEmpty(x: int, y: int) -> bool:
 	return !grid[x][y]
 
@@ -30,3 +26,16 @@ func allEmpty() -> bool:
 			if grid[r][c]:
 				return false
 	return true
+
+
+# Reset Functions
+func resetMap():
+	for node in tiles.get_children():
+		tiles.remove_child(node)
+		node.queue_free()
+
+
+# Placement Functions (transposed)
+func gridToGlobal(x: int, y: int) -> Vector2:
+	var pos = tiles.map_to_world(Vector2(y, x))
+	return pos + tileHalf

@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu/Scripts/menuWarning.gd" type="Script" id=1]
+
+[node name="menuWarning" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 4.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Margin" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+
+[node name="ColorRect" type="ColorRect" parent="Margin"]
+modulate = Color( 1, 1, 1, 0.501961 )
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+
+[node name="Panel" type="PanelContainer" parent="Margin"]
+margin_left = 505.0
+margin_top = 293.0
+margin_right = 519.0
+margin_bottom = 307.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBox" type="VBoxContainer" parent="Margin/Panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 65.0
+margin_bottom = 55.0
+
+[node name="Message" type="LineEdit" parent="Margin/Panel/VBox"]
+unique_name_in_owner = true
+margin_right = 58.0
+margin_bottom = 24.0
+align = 1
+expand_to_text_length = true
+placeholder_text = "MSG"
+
+[node name="Confirm" type="Button" parent="Margin/Panel/VBox"]
+margin_left = 13.0
+margin_top = 28.0
+margin_right = 44.0
+margin_bottom = 48.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "OK"
+
+[connection signal="pressed" from="Margin/Panel/VBox/Confirm" to="." method="_reset"]

@@ -1,0 +1,650 @@
+[gd_resource type="SpriteFrames" load_steps=481 format=2]
+
+[ext_resource path="res://Game/Units/Assets/Frames/02/21.png" type="Texture" id=1]
+[ext_resource path="res://Game/Units/Assets/Frames/02/20.png" type="Texture" id=2]
+[ext_resource path="res://Game/Units/Assets/Frames/02/19.png" type="Texture" id=3]
+[ext_resource path="res://Game/Units/Assets/Frames/01/16.png" type="Texture" id=4]
+[ext_resource path="res://Game/Units/Assets/Frames/01/18.png" type="Texture" id=5]
+[ext_resource path="res://Game/Units/Assets/Frames/09/01.png" type="Texture" id=6]
+[ext_resource path="res://Game/Units/Assets/Frames/01/02.png" type="Texture" id=7]
+[ext_resource path="res://Game/Units/Assets/Frames/01/04.png" type="Texture" id=8]
+[ext_resource path="res://Game/Units/Assets/Frames/01/08.png" type="Texture" id=9]
+[ext_resource path="res://Game/Units/Assets/Frames/01/09.png" type="Texture" id=10]
+[ext_resource path="res://Game/Units/Assets/Frames/01/15.png" type="Texture" id=11]
+[ext_resource path="res://Game/Units/Assets/Frames/01/19.png" type="Texture" id=12]
+[ext_resource path="res://Game/Units/Assets/Frames/01/20.png" type="Texture" id=13]
+[ext_resource path="res://Game/Units/Assets/Frames/01/13.png" type="Texture" id=14]
+[ext_resource path="res://Game/Units/Assets/Frames/01/03.png" type="Texture" id=15]
+[ext_resource path="res://Game/Units/Assets/Frames/01/21.png" type="Texture" id=16]
+[ext_resource path="res://Game/Units/Assets/Frames/01/01.png" type="Texture" id=17]
+[ext_resource path="res://Game/Units/Assets/Frames/01/12.png" type="Texture" id=18]
+[ext_resource path="res://Game/Units/Assets/Frames/01/05.png" type="Texture" id=19]
+[ext_resource path="res://Game/Units/Assets/Frames/01/22.png" type="Texture" id=20]
+[ext_resource path="res://Game/Units/Assets/Frames/01/07.png" type="Texture" id=21]
+[ext_resource path="res://Game/Units/Assets/Frames/01/10.png" type="Texture" id=22]
+[ext_resource path="res://Game/Units/Assets/Frames/01/06.png" type="Texture" id=23]
+[ext_resource path="res://Game/Units/Assets/Frames/01/11.png" type="Texture" id=24]
+[ext_resource path="res://Game/Units/Assets/Frames/01/17.png" type="Texture" id=25]
+[ext_resource path="res://Game/Units/Assets/Frames/01/23.png" type="Texture" id=26]
+[ext_resource path="res://Game/Units/Assets/Frames/01/14.png" type="Texture" id=27]
+[ext_resource path="res://Game/Units/Assets/Frames/13/26.png" type="Texture" id=28]
+[ext_resource path="res://Game/Units/Assets/Frames/15/02.png" type="Texture" id=29]
+[ext_resource path="res://Game/Units/Assets/Frames/15/04.png" type="Texture" id=30]
+[ext_resource path="res://Game/Units/Assets/Frames/15/06.png" type="Texture" id=31]
+[ext_resource path="res://Game/Units/Assets/Frames/15/07.png" type="Texture" id=32]
+[ext_resource path="res://Game/Units/Assets/Frames/13/28.png" type="Texture" id=33]
+[ext_resource path="res://Game/Units/Assets/Frames/14/05.png" type="Texture" id=34]
+[ext_resource path="res://Game/Units/Assets/Frames/15/05.png" type="Texture" id=35]
+[ext_resource path="res://Game/Units/Assets/Frames/15/08.png" type="Texture" id=36]
+[ext_resource path="res://Game/Units/Assets/Frames/15/03.png" type="Texture" id=37]
+[ext_resource path="res://Game/Units/Assets/Frames/15/09.png" type="Texture" id=38]
+[ext_resource path="res://Game/Units/Assets/Frames/14/12.png" type="Texture" id=39]
+[ext_resource path="res://Game/Units/Assets/Frames/15/10.png" type="Texture" id=40]
+[ext_resource path="res://Game/Units/Assets/Frames/15/11.png" type="Texture" id=41]
+[ext_resource path="res://Game/Units/Assets/Frames/15/12.png" type="Texture" id=42]
+[ext_resource path="res://Game/Units/Assets/Frames/15/13.png" type="Texture" id=43]
+[ext_resource path="res://Game/Units/Assets/Frames/15/15.png" type="Texture" id=44]
+[ext_resource path="res://Game/Units/Assets/Frames/15/16.png" type="Texture" id=45]
+[ext_resource path="res://Game/Units/Assets/Frames/15/17.png" type="Texture" id=46]
+[ext_resource path="res://Game/Units/Assets/Frames/13/20.png" type="Texture" id=47]
+[ext_resource path="res://Game/Units/Assets/Frames/13/23.png" type="Texture" id=48]
+[ext_resource path="res://Game/Units/Assets/Frames/14/09.png" type="Texture" id=49]
+[ext_resource path="res://Game/Units/Assets/Frames/14/10.png" type="Texture" id=50]
+[ext_resource path="res://Game/Units/Assets/Frames/14/14.png" type="Texture" id=51]
+[ext_resource path="res://Game/Units/Assets/Frames/14/30.png" type="Texture" id=52]
+[ext_resource path="res://Game/Units/Assets/Frames/15/18.png" type="Texture" id=53]
+[ext_resource path="res://Game/Units/Assets/Frames/15/19.png" type="Texture" id=54]
+[ext_resource path="res://Game/Units/Assets/Frames/13/21.png" type="Texture" id=55]
+[ext_resource path="res://Game/Units/Assets/Frames/13/22.png" type="Texture" id=56]
+[ext_resource path="res://Game/Units/Assets/Frames/14/21.png" type="Texture" id=57]
+[ext_resource path="res://Game/Units/Assets/Frames/13/17.png" type="Texture" id=58]
+[ext_resource path="res://Game/Units/Assets/Frames/14/29.png" type="Texture" id=59]
+[ext_resource path="res://Game/Units/Assets/Frames/15/14.png" type="Texture" id=60]
+[ext_resource path="res://Game/Units/Assets/Frames/13/25.png" type="Texture" id=61]
+[ext_resource path="res://Game/Units/Assets/Frames/13/29.png" type="Texture" id=62]
+[ext_resource path="res://Game/Units/Assets/Frames/13/18.png" type="Texture" id=63]
+[ext_resource path="res://Game/Units/Assets/Frames/14/16.png" type="Texture" id=64]
+[ext_resource path="res://Game/Units/Assets/Frames/14/18.png" type="Texture" id=65]
+[ext_resource path="res://Game/Units/Assets/Frames/14/04.png" type="Texture" id=66]
+[ext_resource path="res://Game/Units/Assets/Frames/13/27.png" type="Texture" id=67]
+[ext_resource path="res://Game/Units/Assets/Frames/14/20.png" type="Texture" id=68]
+[ext_resource path="res://Game/Units/Assets/Frames/14/13.png" type="Texture" id=69]
+[ext_resource path="res://Game/Units/Assets/Frames/13/30.png" type="Texture" id=70]
+[ext_resource path="res://Game/Units/Assets/Frames/14/17.png" type="Texture" id=71]
+[ext_resource path="res://Game/Units/Assets/Frames/14/22.png" type="Texture" id=72]
+[ext_resource path="res://Game/Units/Assets/Frames/14/02.png" type="Texture" id=73]
+[ext_resource path="res://Game/Units/Assets/Frames/14/03.png" type="Texture" id=74]
+[ext_resource path="res://Game/Units/Assets/Frames/14/01.png" type="Texture" id=75]
+[ext_resource path="res://Game/Units/Assets/Frames/14/15.png" type="Texture" id=76]
+[ext_resource path="res://Game/Units/Assets/Frames/13/19.png" type="Texture" id=77]
+[ext_resource path="res://Game/Units/Assets/Frames/13/16.png" type="Texture" id=78]
+[ext_resource path="res://Game/Units/Assets/Frames/14/06.png" type="Texture" id=79]
+[ext_resource path="res://Game/Units/Assets/Frames/14/23.png" type="Texture" id=80]
+[ext_resource path="res://Game/Units/Assets/Frames/14/24.png" type="Texture" id=81]
+[ext_resource path="res://Game/Units/Assets/Frames/14/25.png" type="Texture" id=82]
+[ext_resource path="res://Game/Units/Assets/Frames/14/08.png" type="Texture" id=83]
+[ext_resource path="res://Game/Units/Assets/Frames/14/26.png" type="Texture" id=84]
+[ext_resource path="res://Game/Units/Assets/Frames/14/27.png" type="Texture" id=85]
+[ext_resource path="res://Game/Units/Assets/Frames/13/24.png" type="Texture" id=86]
+[ext_resource path="res://Game/Units/Assets/Frames/14/07.png" type="Texture" id=87]
+[ext_resource path="res://Game/Units/Assets/Frames/14/11.png" type="Texture" id=88]
+[ext_resource path="res://Game/Units/Assets/Frames/14/19.png" type="Texture" id=89]
+[ext_resource path="res://Game/Units/Assets/Frames/14/28.png" type="Texture" id=90]
+[ext_resource path="res://Game/Units/Assets/Frames/15/01.png" type="Texture" id=91]
+[ext_resource path="res://Game/Units/Assets/Frames/11/16.png" type="Texture" id=92]
+[ext_resource path="res://Game/Units/Assets/Frames/12/28.png" type="Texture" id=93]
+[ext_resource path="res://Game/Units/Assets/Frames/12/30.png" type="Texture" id=94]
+[ext_resource path="res://Game/Units/Assets/Frames/11/13.png" type="Texture" id=95]
+[ext_resource path="res://Game/Units/Assets/Frames/11/17.png" type="Texture" id=96]
+[ext_resource path="res://Game/Units/Assets/Frames/11/02.png" type="Texture" id=97]
+[ext_resource path="res://Game/Units/Assets/Frames/11/25.png" type="Texture" id=98]
+[ext_resource path="res://Game/Units/Assets/Frames/11/28.png" type="Texture" id=99]
+[ext_resource path="res://Game/Units/Assets/Frames/11/29.png" type="Texture" id=100]
+[ext_resource path="res://Game/Units/Assets/Frames/12/15.png" type="Texture" id=101]
+[ext_resource path="res://Game/Units/Assets/Frames/11/10.png" type="Texture" id=102]
+[ext_resource path="res://Game/Units/Assets/Frames/12/19.png" type="Texture" id=103]
+[ext_resource path="res://Game/Units/Assets/Frames/12/26.png" type="Texture" id=104]
+[ext_resource path="res://Game/Units/Assets/Frames/12/05.png" type="Texture" id=105]
+[ext_resource path="res://Game/Units/Assets/Frames/12/17.png" type="Texture" id=106]
+[ext_resource path="res://Game/Units/Assets/Frames/11/04.png" type="Texture" id=107]
+[ext_resource path="res://Game/Units/Assets/Frames/11/20.png" type="Texture" id=108]
+[ext_resource path="res://Game/Units/Assets/Frames/11/08.png" type="Texture" id=109]
+[ext_resource path="res://Game/Units/Assets/Frames/10/29.png" type="Texture" id=110]
+[ext_resource path="res://Game/Units/Assets/Frames/11/21.png" type="Texture" id=111]
+[ext_resource path="res://Game/Units/Assets/Frames/12/14.png" type="Texture" id=112]
+[ext_resource path="res://Game/Units/Assets/Frames/11/05.png" type="Texture" id=113]
+[ext_resource path="res://Game/Units/Assets/Frames/11/19.png" type="Texture" id=114]
+[ext_resource path="res://Game/Units/Assets/Frames/11/09.png" type="Texture" id=115]
+[ext_resource path="res://Game/Units/Assets/Frames/11/12.png" type="Texture" id=116]
+[ext_resource path="res://Game/Units/Assets/Frames/11/22.png" type="Texture" id=117]
+[ext_resource path="res://Game/Units/Assets/Frames/12/11.png" type="Texture" id=118]
+[ext_resource path="res://Game/Units/Assets/Frames/12/20.png" type="Texture" id=119]
+[ext_resource path="res://Game/Units/Assets/Frames/12/24.png" type="Texture" id=120]
+[ext_resource path="res://Game/Units/Assets/Frames/12/27.png" type="Texture" id=121]
+[ext_resource path="res://Game/Units/Assets/Frames/12/18.png" type="Texture" id=122]
+[ext_resource path="res://Game/Units/Assets/Frames/12/04.png" type="Texture" id=123]
+[ext_resource path="res://Game/Units/Assets/Frames/12/12.png" type="Texture" id=124]
+[ext_resource path="res://Game/Units/Assets/Frames/12/07.png" type="Texture" id=125]
+[ext_resource path="res://Game/Units/Assets/Frames/12/23.png" type="Texture" id=126]
+[ext_resource path="res://Game/Units/Assets/Frames/12/09.png" type="Texture" id=127]
+[ext_resource path="res://Game/Units/Assets/Frames/11/01.png" type="Texture" id=128]
+[ext_resource path="res://Game/Units/Assets/Frames/11/26.png" type="Texture" id=129]
+[ext_resource path="res://Game/Units/Assets/Frames/11/15.png" type="Texture" id=130]
+[ext_resource path="res://Game/Units/Assets/Frames/11/27.png" type="Texture" id=131]
+[ext_resource path="res://Game/Units/Assets/Frames/12/02.png" type="Texture" id=132]
+[ext_resource path="res://Game/Units/Assets/Frames/12/03.png" type="Texture" id=133]
+[ext_resource path="res://Game/Units/Assets/Frames/11/06.png" type="Texture" id=134]
+[ext_resource path="res://Game/Units/Assets/Frames/12/08.png" type="Texture" id=135]
+[ext_resource path="res://Game/Units/Assets/Frames/12/06.png" type="Texture" id=136]
+[ext_resource path="res://Game/Units/Assets/Frames/12/01.png" type="Texture" id=137]
+[ext_resource path="res://Game/Units/Assets/Frames/12/10.png" type="Texture" id=138]
+[ext_resource path="res://Game/Units/Assets/Frames/12/16.png" type="Texture" id=139]
+[ext_resource path="res://Game/Units/Assets/Frames/12/29.png" type="Texture" id=140]
+[ext_resource path="res://Game/Units/Assets/Frames/13/01.png" type="Texture" id=141]
+[ext_resource path="res://Game/Units/Assets/Frames/12/22.png" type="Texture" id=142]
+[ext_resource path="res://Game/Units/Assets/Frames/13/02.png" type="Texture" id=143]
+[ext_resource path="res://Game/Units/Assets/Frames/12/13.png" type="Texture" id=144]
+[ext_resource path="res://Game/Units/Assets/Frames/10/30.png" type="Texture" id=145]
+[ext_resource path="res://Game/Units/Assets/Frames/11/18.png" type="Texture" id=146]
+[ext_resource path="res://Game/Units/Assets/Frames/11/11.png" type="Texture" id=147]
+[ext_resource path="res://Game/Units/Assets/Frames/11/14.png" type="Texture" id=148]
+[ext_resource path="res://Game/Units/Assets/Frames/11/23.png" type="Texture" id=149]
+[ext_resource path="res://Game/Units/Assets/Frames/11/24.png" type="Texture" id=150]
+[ext_resource path="res://Game/Units/Assets/Frames/11/30.png" type="Texture" id=151]
+[ext_resource path="res://Game/Units/Assets/Frames/12/21.png" type="Texture" id=152]
+[ext_resource path="res://Game/Units/Assets/Frames/11/07.png" type="Texture" id=153]
+[ext_resource path="res://Game/Units/Assets/Frames/12/25.png" type="Texture" id=154]
+[ext_resource path="res://Game/Units/Assets/Frames/11/03.png" type="Texture" id=155]
+[ext_resource path="res://Game/Units/Assets/Frames/13/05.png" type="Texture" id=156]
+[ext_resource path="res://Game/Units/Assets/Frames/13/14.png" type="Texture" id=157]
+[ext_resource path="res://Game/Units/Assets/Frames/13/15.png" type="Texture" id=158]
+[ext_resource path="res://Game/Units/Assets/Frames/13/12.png" type="Texture" id=159]
+[ext_resource path="res://Game/Units/Assets/Frames/13/11.png" type="Texture" id=160]
+[ext_resource path="res://Game/Units/Assets/Frames/13/09.png" type="Texture" id=161]
+[ext_resource path="res://Game/Units/Assets/Frames/13/03.png" type="Texture" id=162]
+[ext_resource path="res://Game/Units/Assets/Frames/13/06.png" type="Texture" id=163]
+[ext_resource path="res://Game/Units/Assets/Frames/13/04.png" type="Texture" id=164]
+[ext_resource path="res://Game/Units/Assets/Frames/13/07.png" type="Texture" id=165]
+[ext_resource path="res://Game/Units/Assets/Frames/13/10.png" type="Texture" id=166]
+[ext_resource path="res://Game/Units/Assets/Frames/13/08.png" type="Texture" id=167]
+[ext_resource path="res://Game/Units/Assets/Frames/13/13.png" type="Texture" id=168]
+[ext_resource path="res://Game/Units/Assets/Frames/03/14.png" type="Texture" id=169]
+[ext_resource path="res://Game/Units/Assets/Frames/03/23.png" type="Texture" id=170]
+[ext_resource path="res://Game/Units/Assets/Frames/03/22.png" type="Texture" id=171]
+[ext_resource path="res://Game/Units/Assets/Frames/03/09.png" type="Texture" id=172]
+[ext_resource path="res://Game/Units/Assets/Frames/03/15.png" type="Texture" id=173]
+[ext_resource path="res://Game/Units/Assets/Frames/03/17.png" type="Texture" id=174]
+[ext_resource path="res://Game/Units/Assets/Frames/03/21.png" type="Texture" id=175]
+[ext_resource path="res://Game/Units/Assets/Frames/03/25.png" type="Texture" id=176]
+[ext_resource path="res://Game/Units/Assets/Frames/02/23.png" type="Texture" id=177]
+[ext_resource path="res://Game/Units/Assets/Frames/03/26.png" type="Texture" id=178]
+[ext_resource path="res://Game/Units/Assets/Frames/03/12.png" type="Texture" id=179]
+[ext_resource path="res://Game/Units/Assets/Frames/03/13.png" type="Texture" id=180]
+[ext_resource path="res://Game/Units/Assets/Frames/02/30.png" type="Texture" id=181]
+[ext_resource path="res://Game/Units/Assets/Frames/03/01.png" type="Texture" id=182]
+[ext_resource path="res://Game/Units/Assets/Frames/02/27.png" type="Texture" id=183]
+[ext_resource path="res://Game/Units/Assets/Frames/02/24.png" type="Texture" id=184]
+[ext_resource path="res://Game/Units/Assets/Frames/03/04.png" type="Texture" id=185]
+[ext_resource path="res://Game/Units/Assets/Frames/03/07.png" type="Texture" id=186]
+[ext_resource path="res://Game/Units/Assets/Frames/03/11.png" type="Texture" id=187]
+[ext_resource path="res://Game/Units/Assets/Frames/03/19.png" type="Texture" id=188]
+[ext_resource path="res://Game/Units/Assets/Frames/03/24.png" type="Texture" id=189]
+[ext_resource path="res://Game/Units/Assets/Frames/03/02.png" type="Texture" id=190]
+[ext_resource path="res://Game/Units/Assets/Frames/03/16.png" type="Texture" id=191]
+[ext_resource path="res://Game/Units/Assets/Frames/02/25.png" type="Texture" id=192]
+[ext_resource path="res://Game/Units/Assets/Frames/02/26.png" type="Texture" id=193]
+[ext_resource path="res://Game/Units/Assets/Frames/03/03.png" type="Texture" id=194]
+[ext_resource path="res://Game/Units/Assets/Frames/03/18.png" type="Texture" id=195]
+[ext_resource path="res://Game/Units/Assets/Frames/03/20.png" type="Texture" id=196]
+[ext_resource path="res://Game/Units/Assets/Frames/03/05.png" type="Texture" id=197]
+[ext_resource path="res://Game/Units/Assets/Frames/02/29.png" type="Texture" id=198]
+[ext_resource path="res://Game/Units/Assets/Frames/02/28.png" type="Texture" id=199]
+[ext_resource path="res://Game/Units/Assets/Frames/02/22.png" type="Texture" id=200]
+[ext_resource path="res://Game/Units/Assets/Frames/03/06.png" type="Texture" id=201]
+[ext_resource path="res://Game/Units/Assets/Frames/03/08.png" type="Texture" id=202]
+[ext_resource path="res://Game/Units/Assets/Frames/03/10.png" type="Texture" id=203]
+[ext_resource path="res://Game/Units/Assets/Frames/00/11.png" type="Texture" id=204]
+[ext_resource path="res://Game/Units/Assets/Frames/00/02.png" type="Texture" id=205]
+[ext_resource path="res://Game/Units/Assets/Frames/00/25.png" type="Texture" id=206]
+[ext_resource path="res://Game/Units/Assets/Frames/00/22.png" type="Texture" id=207]
+[ext_resource path="res://Game/Units/Assets/Frames/00/14.png" type="Texture" id=208]
+[ext_resource path="res://Game/Units/Assets/Frames/00/20.png" type="Texture" id=209]
+[ext_resource path="res://Game/Units/Assets/Frames/00/29.png" type="Texture" id=210]
+[ext_resource path="res://Game/Units/Assets/Frames/15/26.png" type="Texture" id=211]
+[ext_resource path="res://Game/Units/Assets/Frames/15/25.png" type="Texture" id=212]
+[ext_resource path="res://Game/Units/Assets/Frames/15/20.png" type="Texture" id=213]
+[ext_resource path="res://Game/Units/Assets/Frames/00/05.png" type="Texture" id=214]
+[ext_resource path="res://Game/Units/Assets/Frames/00/09.png" type="Texture" id=215]
+[ext_resource path="res://Game/Units/Assets/Frames/00/12.png" type="Texture" id=216]
+[ext_resource path="res://Game/Units/Assets/Frames/00/16.png" type="Texture" id=217]
+[ext_resource path="res://Game/Units/Assets/Frames/00/17.png" type="Texture" id=218]
+[ext_resource path="res://Game/Units/Assets/Frames/00/15.png" type="Texture" id=219]
+[ext_resource path="res://Game/Units/Assets/Frames/00/24.png" type="Texture" id=220]
+[ext_resource path="res://Game/Units/Assets/Frames/00/28.png" type="Texture" id=221]
+[ext_resource path="res://Game/Units/Assets/Frames/15/24.png" type="Texture" id=222]
+[ext_resource path="res://Game/Units/Assets/Frames/15/30.png" type="Texture" id=223]
+[ext_resource path="res://Game/Units/Assets/Frames/15/23.png" type="Texture" id=224]
+[ext_resource path="res://Game/Units/Assets/Frames/15/29.png" type="Texture" id=225]
+[ext_resource path="res://Game/Units/Assets/Frames/00/23.png" type="Texture" id=226]
+[ext_resource path="res://Game/Units/Assets/Frames/00/27.png" type="Texture" id=227]
+[ext_resource path="res://Game/Units/Assets/Frames/00/08.png" type="Texture" id=228]
+[ext_resource path="res://Game/Units/Assets/Frames/00/21.png" type="Texture" id=229]
+[ext_resource path="res://Game/Units/Assets/Frames/00/04.png" type="Texture" id=230]
+[ext_resource path="res://Game/Units/Assets/Frames/15/22.png" type="Texture" id=231]
+[ext_resource path="res://Game/Units/Assets/Frames/15/27.png" type="Texture" id=232]
+[ext_resource path="res://Game/Units/Assets/Frames/00/13.png" type="Texture" id=233]
+[ext_resource path="res://Game/Units/Assets/Frames/00/18.png" type="Texture" id=234]
+[ext_resource path="res://Game/Units/Assets/Frames/00/07.png" type="Texture" id=235]
+[ext_resource path="res://Game/Units/Assets/Frames/00/30.png" type="Texture" id=236]
+[ext_resource path="res://Game/Units/Assets/Frames/00/26.png" type="Texture" id=237]
+[ext_resource path="res://Game/Units/Assets/Frames/00/10.png" type="Texture" id=238]
+[ext_resource path="res://Game/Units/Assets/Frames/15/28.png" type="Texture" id=239]
+[ext_resource path="res://Game/Units/Assets/Frames/15/21.png" type="Texture" id=240]
+[ext_resource path="res://Game/Units/Assets/Frames/00/01.png" type="Texture" id=241]
+[ext_resource path="res://Game/Units/Assets/Frames/00/19.png" type="Texture" id=242]
+[ext_resource path="res://Game/Units/Assets/Frames/00/03.png" type="Texture" id=243]
+[ext_resource path="res://Game/Units/Assets/Frames/00/06.png" type="Texture" id=244]
+[ext_resource path="res://Game/Units/Assets/Frames/09/25.png" type="Texture" id=245]
+[ext_resource path="res://Game/Units/Assets/Frames/08/22.png" type="Texture" id=246]
+[ext_resource path="res://Game/Units/Assets/Frames/09/03.png" type="Texture" id=247]
+[ext_resource path="res://Game/Units/Assets/Frames/09/14.png" type="Texture" id=248]
+[ext_resource path="res://Game/Units/Assets/Frames/09/20.png" type="Texture" id=249]
+[ext_resource path="res://Game/Units/Assets/Frames/09/27.png" type="Texture" id=250]
+[ext_resource path="res://Game/Units/Assets/Frames/09/13.png" type="Texture" id=251]
+[ext_resource path="res://Game/Units/Assets/Frames/10/01.png" type="Texture" id=252]
+[ext_resource path="res://Game/Units/Assets/Frames/09/09.png" type="Texture" id=253]
+[ext_resource path="res://Game/Units/Assets/Frames/10/07.png" type="Texture" id=254]
+[ext_resource path="res://Game/Units/Assets/Frames/09/07.png" type="Texture" id=255]
+[ext_resource path="res://Game/Units/Assets/Frames/09/15.png" type="Texture" id=256]
+[ext_resource path="res://Game/Units/Assets/Frames/08/23.png" type="Texture" id=257]
+[ext_resource path="res://Game/Units/Assets/Frames/09/22.png" type="Texture" id=258]
+[ext_resource path="res://Game/Units/Assets/Frames/08/18.png" type="Texture" id=259]
+[ext_resource path="res://Game/Units/Assets/Frames/08/24.png" type="Texture" id=260]
+[ext_resource path="res://Game/Units/Assets/Frames/08/25.png" type="Texture" id=261]
+[ext_resource path="res://Game/Units/Assets/Frames/09/28.png" type="Texture" id=262]
+[ext_resource path="res://Game/Units/Assets/Frames/09/06.png" type="Texture" id=263]
+[ext_resource path="res://Game/Units/Assets/Frames/09/26.png" type="Texture" id=264]
+[ext_resource path="res://Game/Units/Assets/Frames/09/29.png" type="Texture" id=265]
+[ext_resource path="res://Game/Units/Assets/Frames/10/04.png" type="Texture" id=266]
+[ext_resource path="res://Game/Units/Assets/Frames/10/05.png" type="Texture" id=267]
+[ext_resource path="res://Game/Units/Assets/Frames/10/08.png" type="Texture" id=268]
+[ext_resource path="res://Game/Units/Assets/Frames/09/11.png" type="Texture" id=269]
+[ext_resource path="res://Game/Units/Assets/Frames/10/10.png" type="Texture" id=270]
+[ext_resource path="res://Game/Units/Assets/Frames/09/16.png" type="Texture" id=271]
+[ext_resource path="res://Game/Units/Assets/Frames/09/08.png" type="Texture" id=272]
+[ext_resource path="res://Game/Units/Assets/Frames/10/09.png" type="Texture" id=273]
+[ext_resource path="res://Game/Units/Assets/Frames/10/11.png" type="Texture" id=274]
+[ext_resource path="res://Game/Units/Assets/Frames/10/12.png" type="Texture" id=275]
+[ext_resource path="res://Game/Units/Assets/Frames/10/13.png" type="Texture" id=276]
+[ext_resource path="res://Game/Units/Assets/Frames/09/30.png" type="Texture" id=277]
+[ext_resource path="res://Game/Units/Assets/Frames/10/15.png" type="Texture" id=278]
+[ext_resource path="res://Game/Units/Assets/Frames/10/16.png" type="Texture" id=279]
+[ext_resource path="res://Game/Units/Assets/Frames/10/17.png" type="Texture" id=280]
+[ext_resource path="res://Game/Units/Assets/Frames/10/18.png" type="Texture" id=281]
+[ext_resource path="res://Game/Units/Assets/Frames/09/10.png" type="Texture" id=282]
+[ext_resource path="res://Game/Units/Assets/Frames/10/19.png" type="Texture" id=283]
+[ext_resource path="res://Game/Units/Assets/Frames/08/21.png" type="Texture" id=284]
+[ext_resource path="res://Game/Units/Assets/Frames/08/29.png" type="Texture" id=285]
+[ext_resource path="res://Game/Units/Assets/Frames/10/03.png" type="Texture" id=286]
+[ext_resource path="res://Game/Units/Assets/Frames/10/20.png" type="Texture" id=287]
+[ext_resource path="res://Game/Units/Assets/Frames/08/19.png" type="Texture" id=288]
+[ext_resource path="res://Game/Units/Assets/Frames/08/20.png" type="Texture" id=289]
+[ext_resource path="res://Game/Units/Assets/Frames/08/28.png" type="Texture" id=290]
+[ext_resource path="res://Game/Units/Assets/Frames/09/02.png" type="Texture" id=291]
+[ext_resource path="res://Game/Units/Assets/Frames/09/23.png" type="Texture" id=292]
+[ext_resource path="res://Game/Units/Assets/Frames/09/19.png" type="Texture" id=293]
+[ext_resource path="res://Game/Units/Assets/Frames/08/30.png" type="Texture" id=294]
+[ext_resource path="res://Game/Units/Assets/Frames/09/04.png" type="Texture" id=295]
+[ext_resource path="res://Game/Units/Assets/Frames/08/26.png" type="Texture" id=296]
+[ext_resource path="res://Game/Units/Assets/Frames/09/18.png" type="Texture" id=297]
+[ext_resource path="res://Game/Units/Assets/Frames/09/24.png" type="Texture" id=298]
+[ext_resource path="res://Game/Units/Assets/Frames/09/12.png" type="Texture" id=299]
+[ext_resource path="res://Game/Units/Assets/Frames/10/02.png" type="Texture" id=300]
+[ext_resource path="res://Game/Units/Assets/Frames/08/17.png" type="Texture" id=301]
+[ext_resource path="res://Game/Units/Assets/Frames/09/21.png" type="Texture" id=302]
+[ext_resource path="res://Game/Units/Assets/Frames/10/06.png" type="Texture" id=303]
+[ext_resource path="res://Game/Units/Assets/Frames/10/14.png" type="Texture" id=304]
+[ext_resource path="res://Game/Units/Assets/Frames/10/21.png" type="Texture" id=305]
+[ext_resource path="res://Game/Units/Assets/Frames/08/27.png" type="Texture" id=306]
+[ext_resource path="res://Game/Units/Assets/Frames/09/05.png" type="Texture" id=307]
+[ext_resource path="res://Game/Units/Assets/Frames/09/17.png" type="Texture" id=308]
+[ext_resource path="res://Game/Units/Assets/Frames/10/22.png" type="Texture" id=309]
+[ext_resource path="res://Game/Units/Assets/Frames/10/24.png" type="Texture" id=310]
+[ext_resource path="res://Game/Units/Assets/Frames/10/23.png" type="Texture" id=311]
+[ext_resource path="res://Game/Units/Assets/Frames/10/26.png" type="Texture" id=312]
+[ext_resource path="res://Game/Units/Assets/Frames/10/25.png" type="Texture" id=313]
+[ext_resource path="res://Game/Units/Assets/Frames/10/27.png" type="Texture" id=314]
+[ext_resource path="res://Game/Units/Assets/Frames/05/24.png" type="Texture" id=315]
+[ext_resource path="res://Game/Units/Assets/Frames/05/14.png" type="Texture" id=316]
+[ext_resource path="res://Game/Units/Assets/Frames/04/12.png" type="Texture" id=317]
+[ext_resource path="res://Game/Units/Assets/Frames/05/16.png" type="Texture" id=318]
+[ext_resource path="res://Game/Units/Assets/Frames/05/25.png" type="Texture" id=319]
+[ext_resource path="res://Game/Units/Assets/Frames/05/26.png" type="Texture" id=320]
+[ext_resource path="res://Game/Units/Assets/Frames/04/04.png" type="Texture" id=321]
+[ext_resource path="res://Game/Units/Assets/Frames/04/15.png" type="Texture" id=322]
+[ext_resource path="res://Game/Units/Assets/Frames/05/27.png" type="Texture" id=323]
+[ext_resource path="res://Game/Units/Assets/Frames/05/30.png" type="Texture" id=324]
+[ext_resource path="res://Game/Units/Assets/Frames/04/16.png" type="Texture" id=325]
+[ext_resource path="res://Game/Units/Assets/Frames/04/10.png" type="Texture" id=326]
+[ext_resource path="res://Game/Units/Assets/Frames/04/24.png" type="Texture" id=327]
+[ext_resource path="res://Game/Units/Assets/Frames/05/07.png" type="Texture" id=328]
+[ext_resource path="res://Game/Units/Assets/Frames/05/11.png" type="Texture" id=329]
+[ext_resource path="res://Game/Units/Assets/Frames/05/01.png" type="Texture" id=330]
+[ext_resource path="res://Game/Units/Assets/Frames/04/01.png" type="Texture" id=331]
+[ext_resource path="res://Game/Units/Assets/Frames/04/28.png" type="Texture" id=332]
+[ext_resource path="res://Game/Units/Assets/Frames/05/05.png" type="Texture" id=333]
+[ext_resource path="res://Game/Units/Assets/Frames/04/17.png" type="Texture" id=334]
+[ext_resource path="res://Game/Units/Assets/Frames/05/19.png" type="Texture" id=335]
+[ext_resource path="res://Game/Units/Assets/Frames/04/02.png" type="Texture" id=336]
+[ext_resource path="res://Game/Units/Assets/Frames/03/27.png" type="Texture" id=337]
+[ext_resource path="res://Game/Units/Assets/Frames/04/26.png" type="Texture" id=338]
+[ext_resource path="res://Game/Units/Assets/Frames/04/22.png" type="Texture" id=339]
+[ext_resource path="res://Game/Units/Assets/Frames/04/07.png" type="Texture" id=340]
+[ext_resource path="res://Game/Units/Assets/Frames/05/20.png" type="Texture" id=341]
+[ext_resource path="res://Game/Units/Assets/Frames/05/29.png" type="Texture" id=342]
+[ext_resource path="res://Game/Units/Assets/Frames/05/28.png" type="Texture" id=343]
+[ext_resource path="res://Game/Units/Assets/Frames/04/09.png" type="Texture" id=344]
+[ext_resource path="res://Game/Units/Assets/Frames/04/03.png" type="Texture" id=345]
+[ext_resource path="res://Game/Units/Assets/Frames/04/27.png" type="Texture" id=346]
+[ext_resource path="res://Game/Units/Assets/Frames/05/06.png" type="Texture" id=347]
+[ext_resource path="res://Game/Units/Assets/Frames/03/28.png" type="Texture" id=348]
+[ext_resource path="res://Game/Units/Assets/Frames/04/05.png" type="Texture" id=349]
+[ext_resource path="res://Game/Units/Assets/Frames/05/04.png" type="Texture" id=350]
+[ext_resource path="res://Game/Units/Assets/Frames/04/29.png" type="Texture" id=351]
+[ext_resource path="res://Game/Units/Assets/Frames/05/09.png" type="Texture" id=352]
+[ext_resource path="res://Game/Units/Assets/Frames/04/13.png" type="Texture" id=353]
+[ext_resource path="res://Game/Units/Assets/Frames/05/10.png" type="Texture" id=354]
+[ext_resource path="res://Game/Units/Assets/Frames/04/06.png" type="Texture" id=355]
+[ext_resource path="res://Game/Units/Assets/Frames/04/08.png" type="Texture" id=356]
+[ext_resource path="res://Game/Units/Assets/Frames/04/23.png" type="Texture" id=357]
+[ext_resource path="res://Game/Units/Assets/Frames/04/25.png" type="Texture" id=358]
+[ext_resource path="res://Game/Units/Assets/Frames/05/03.png" type="Texture" id=359]
+[ext_resource path="res://Game/Units/Assets/Frames/05/12.png" type="Texture" id=360]
+[ext_resource path="res://Game/Units/Assets/Frames/03/29.png" type="Texture" id=361]
+[ext_resource path="res://Game/Units/Assets/Frames/04/18.png" type="Texture" id=362]
+[ext_resource path="res://Game/Units/Assets/Frames/05/02.png" type="Texture" id=363]
+[ext_resource path="res://Game/Units/Assets/Frames/05/08.png" type="Texture" id=364]
+[ext_resource path="res://Game/Units/Assets/Frames/04/19.png" type="Texture" id=365]
+[ext_resource path="res://Game/Units/Assets/Frames/04/11.png" type="Texture" id=366]
+[ext_resource path="res://Game/Units/Assets/Frames/03/30.png" type="Texture" id=367]
+[ext_resource path="res://Game/Units/Assets/Frames/04/14.png" type="Texture" id=368]
+[ext_resource path="res://Game/Units/Assets/Frames/04/20.png" type="Texture" id=369]
+[ext_resource path="res://Game/Units/Assets/Frames/05/13.png" type="Texture" id=370]
+[ext_resource path="res://Game/Units/Assets/Frames/04/30.png" type="Texture" id=371]
+[ext_resource path="res://Game/Units/Assets/Frames/05/15.png" type="Texture" id=372]
+[ext_resource path="res://Game/Units/Assets/Frames/05/17.png" type="Texture" id=373]
+[ext_resource path="res://Game/Units/Assets/Frames/05/18.png" type="Texture" id=374]
+[ext_resource path="res://Game/Units/Assets/Frames/05/21.png" type="Texture" id=375]
+[ext_resource path="res://Game/Units/Assets/Frames/05/22.png" type="Texture" id=376]
+[ext_resource path="res://Game/Units/Assets/Frames/05/23.png" type="Texture" id=377]
+[ext_resource path="res://Game/Units/Assets/Frames/04/21.png" type="Texture" id=378]
+[ext_resource path="res://Game/Units/Assets/Frames/07/02.png" type="Texture" id=379]
+[ext_resource path="res://Game/Units/Assets/Frames/07/26.png" type="Texture" id=380]
+[ext_resource path="res://Game/Units/Assets/Frames/06/04.png" type="Texture" id=381]
+[ext_resource path="res://Game/Units/Assets/Frames/06/22.png" type="Texture" id=382]
+[ext_resource path="res://Game/Units/Assets/Frames/07/17.png" type="Texture" id=383]
+[ext_resource path="res://Game/Units/Assets/Frames/07/15.png" type="Texture" id=384]
+[ext_resource path="res://Game/Units/Assets/Frames/07/21.png" type="Texture" id=385]
+[ext_resource path="res://Game/Units/Assets/Frames/07/25.png" type="Texture" id=386]
+[ext_resource path="res://Game/Units/Assets/Frames/06/30.png" type="Texture" id=387]
+[ext_resource path="res://Game/Units/Assets/Frames/06/05.png" type="Texture" id=388]
+[ext_resource path="res://Game/Units/Assets/Frames/06/07.png" type="Texture" id=389]
+[ext_resource path="res://Game/Units/Assets/Frames/07/03.png" type="Texture" id=390]
+[ext_resource path="res://Game/Units/Assets/Frames/07/04.png" type="Texture" id=391]
+[ext_resource path="res://Game/Units/Assets/Frames/07/10.png" type="Texture" id=392]
+[ext_resource path="res://Game/Units/Assets/Frames/07/28.png" type="Texture" id=393]
+[ext_resource path="res://Game/Units/Assets/Frames/06/15.png" type="Texture" id=394]
+[ext_resource path="res://Game/Units/Assets/Frames/06/20.png" type="Texture" id=395]
+[ext_resource path="res://Game/Units/Assets/Frames/06/29.png" type="Texture" id=396]
+[ext_resource path="res://Game/Units/Assets/Frames/07/23.png" type="Texture" id=397]
+[ext_resource path="res://Game/Units/Assets/Frames/06/24.png" type="Texture" id=398]
+[ext_resource path="res://Game/Units/Assets/Frames/07/29.png" type="Texture" id=399]
+[ext_resource path="res://Game/Units/Assets/Frames/07/30.png" type="Texture" id=400]
+[ext_resource path="res://Game/Units/Assets/Frames/07/01.png" type="Texture" id=401]
+[ext_resource path="res://Game/Units/Assets/Frames/08/01.png" type="Texture" id=402]
+[ext_resource path="res://Game/Units/Assets/Frames/08/03.png" type="Texture" id=403]
+[ext_resource path="res://Game/Units/Assets/Frames/07/07.png" type="Texture" id=404]
+[ext_resource path="res://Game/Units/Assets/Frames/06/01.png" type="Texture" id=405]
+[ext_resource path="res://Game/Units/Assets/Frames/06/13.png" type="Texture" id=406]
+[ext_resource path="res://Game/Units/Assets/Frames/06/17.png" type="Texture" id=407]
+[ext_resource path="res://Game/Units/Assets/Frames/06/25.png" type="Texture" id=408]
+[ext_resource path="res://Game/Units/Assets/Frames/07/08.png" type="Texture" id=409]
+[ext_resource path="res://Game/Units/Assets/Frames/07/11.png" type="Texture" id=410]
+[ext_resource path="res://Game/Units/Assets/Frames/06/03.png" type="Texture" id=411]
+[ext_resource path="res://Game/Units/Assets/Frames/07/13.png" type="Texture" id=412]
+[ext_resource path="res://Game/Units/Assets/Frames/06/14.png" type="Texture" id=413]
+[ext_resource path="res://Game/Units/Assets/Frames/06/12.png" type="Texture" id=414]
+[ext_resource path="res://Game/Units/Assets/Frames/06/28.png" type="Texture" id=415]
+[ext_resource path="res://Game/Units/Assets/Frames/07/09.png" type="Texture" id=416]
+[ext_resource path="res://Game/Units/Assets/Frames/07/19.png" type="Texture" id=417]
+[ext_resource path="res://Game/Units/Assets/Frames/07/20.png" type="Texture" id=418]
+[ext_resource path="res://Game/Units/Assets/Frames/06/18.png" type="Texture" id=419]
+[ext_resource path="res://Game/Units/Assets/Frames/07/27.png" type="Texture" id=420]
+[ext_resource path="res://Game/Units/Assets/Frames/06/02.png" type="Texture" id=421]
+[ext_resource path="res://Game/Units/Assets/Frames/07/06.png" type="Texture" id=422]
+[ext_resource path="res://Game/Units/Assets/Frames/07/14.png" type="Texture" id=423]
+[ext_resource path="res://Game/Units/Assets/Frames/08/02.png" type="Texture" id=424]
+[ext_resource path="res://Game/Units/Assets/Frames/07/16.png" type="Texture" id=425]
+[ext_resource path="res://Game/Units/Assets/Frames/08/04.png" type="Texture" id=426]
+[ext_resource path="res://Game/Units/Assets/Frames/06/16.png" type="Texture" id=427]
+[ext_resource path="res://Game/Units/Assets/Frames/06/19.png" type="Texture" id=428]
+[ext_resource path="res://Game/Units/Assets/Frames/06/26.png" type="Texture" id=429]
+[ext_resource path="res://Game/Units/Assets/Frames/06/10.png" type="Texture" id=430]
+[ext_resource path="res://Game/Units/Assets/Frames/06/06.png" type="Texture" id=431]
+[ext_resource path="res://Game/Units/Assets/Frames/06/27.png" type="Texture" id=432]
+[ext_resource path="res://Game/Units/Assets/Frames/06/23.png" type="Texture" id=433]
+[ext_resource path="res://Game/Units/Assets/Frames/07/12.png" type="Texture" id=434]
+[ext_resource path="res://Game/Units/Assets/Frames/07/18.png" type="Texture" id=435]
+[ext_resource path="res://Game/Units/Assets/Frames/06/11.png" type="Texture" id=436]
+[ext_resource path="res://Game/Units/Assets/Frames/06/08.png" type="Texture" id=437]
+[ext_resource path="res://Game/Units/Assets/Frames/07/05.png" type="Texture" id=438]
+[ext_resource path="res://Game/Units/Assets/Frames/07/22.png" type="Texture" id=439]
+[ext_resource path="res://Game/Units/Assets/Frames/06/21.png" type="Texture" id=440]
+[ext_resource path="res://Game/Units/Assets/Frames/07/24.png" type="Texture" id=441]
+[ext_resource path="res://Game/Units/Assets/Frames/06/09.png" type="Texture" id=442]
+[ext_resource path="res://Game/Units/Assets/Frames/08/10.png" type="Texture" id=443]
+[ext_resource path="res://Game/Units/Assets/Frames/08/08.png" type="Texture" id=444]
+[ext_resource path="res://Game/Units/Assets/Frames/08/07.png" type="Texture" id=445]
+[ext_resource path="res://Game/Units/Assets/Frames/08/15.png" type="Texture" id=446]
+[ext_resource path="res://Game/Units/Assets/Frames/08/16.png" type="Texture" id=447]
+[ext_resource path="res://Game/Units/Assets/Frames/08/05.png" type="Texture" id=448]
+[ext_resource path="res://Game/Units/Assets/Frames/08/06.png" type="Texture" id=449]
+[ext_resource path="res://Game/Units/Assets/Frames/08/11.png" type="Texture" id=450]
+[ext_resource path="res://Game/Units/Assets/Frames/08/12.png" type="Texture" id=451]
+[ext_resource path="res://Game/Units/Assets/Frames/08/13.png" type="Texture" id=452]
+[ext_resource path="res://Game/Units/Assets/Frames/10/28.png" type="Texture" id=453]
+[ext_resource path="res://Game/Units/Assets/Frames/08/09.png" type="Texture" id=454]
+[ext_resource path="res://Game/Units/Assets/Frames/08/14.png" type="Texture" id=455]
+[ext_resource path="res://Game/Units/Assets/Frames/01/26.png" type="Texture" id=456]
+[ext_resource path="res://Game/Units/Assets/Frames/02/10.png" type="Texture" id=457]
+[ext_resource path="res://Game/Units/Assets/Frames/01/27.png" type="Texture" id=458]
+[ext_resource path="res://Game/Units/Assets/Frames/02/09.png" type="Texture" id=459]
+[ext_resource path="res://Game/Units/Assets/Frames/01/24.png" type="Texture" id=460]
+[ext_resource path="res://Game/Units/Assets/Frames/01/29.png" type="Texture" id=461]
+[ext_resource path="res://Game/Units/Assets/Frames/01/28.png" type="Texture" id=462]
+[ext_resource path="res://Game/Units/Assets/Frames/01/30.png" type="Texture" id=463]
+[ext_resource path="res://Game/Units/Assets/Frames/02/02.png" type="Texture" id=464]
+[ext_resource path="res://Game/Units/Assets/Frames/02/04.png" type="Texture" id=465]
+[ext_resource path="res://Game/Units/Assets/Frames/02/07.png" type="Texture" id=466]
+[ext_resource path="res://Game/Units/Assets/Frames/02/08.png" type="Texture" id=467]
+[ext_resource path="res://Game/Units/Assets/Frames/02/12.png" type="Texture" id=468]
+[ext_resource path="res://Game/Units/Assets/Frames/01/25.png" type="Texture" id=469]
+[ext_resource path="res://Game/Units/Assets/Frames/02/01.png" type="Texture" id=470]
+[ext_resource path="res://Game/Units/Assets/Frames/02/05.png" type="Texture" id=471]
+[ext_resource path="res://Game/Units/Assets/Frames/02/13.png" type="Texture" id=472]
+[ext_resource path="res://Game/Units/Assets/Frames/02/03.png" type="Texture" id=473]
+[ext_resource path="res://Game/Units/Assets/Frames/02/06.png" type="Texture" id=474]
+[ext_resource path="res://Game/Units/Assets/Frames/02/11.png" type="Texture" id=475]
+[ext_resource path="res://Game/Units/Assets/Frames/02/14.png" type="Texture" id=476]
+[ext_resource path="res://Game/Units/Assets/Frames/02/17.png" type="Texture" id=477]
+[ext_resource path="res://Game/Units/Assets/Frames/02/18.png" type="Texture" id=478]
+[ext_resource path="res://Game/Units/Assets/Frames/02/15.png" type="Texture" id=479]
+[ext_resource path="res://Game/Units/Assets/Frames/02/16.png" type="Texture" id=480]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 241 ), ExtResource( 205 ), ExtResource( 243 ), ExtResource( 230 ), ExtResource( 214 ), ExtResource( 244 ), ExtResource( 235 ), ExtResource( 228 ), ExtResource( 215 ), ExtResource( 238 ), ExtResource( 204 ), ExtResource( 216 ), ExtResource( 233 ), ExtResource( 208 ), ExtResource( 219 ), ExtResource( 217 ), ExtResource( 218 ), ExtResource( 234 ), ExtResource( 242 ), ExtResource( 209 ), ExtResource( 229 ), ExtResource( 207 ), ExtResource( 226 ), ExtResource( 220 ), ExtResource( 206 ), ExtResource( 237 ), ExtResource( 227 ), ExtResource( 221 ), ExtResource( 210 ), ExtResource( 236 ) ],
+"loop": false,
+"name": "00A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 241 ) ],
+"loop": false,
+"name": "00B",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 21 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 22 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 27 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "01A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 25 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 26 ), ExtResource( 460 ), ExtResource( 469 ), ExtResource( 456 ), ExtResource( 458 ), ExtResource( 462 ), ExtResource( 461 ), ExtResource( 463 ) ],
+"loop": false,
+"name": "01B",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 470 ), ExtResource( 464 ), ExtResource( 473 ), ExtResource( 465 ), ExtResource( 471 ), ExtResource( 474 ), ExtResource( 466 ), ExtResource( 467 ), ExtResource( 459 ), ExtResource( 457 ), ExtResource( 475 ), ExtResource( 468 ), ExtResource( 472 ), ExtResource( 476 ), ExtResource( 479 ), ExtResource( 480 ), ExtResource( 477 ), ExtResource( 478 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 200 ), ExtResource( 177 ), ExtResource( 184 ), ExtResource( 192 ), ExtResource( 193 ), ExtResource( 183 ), ExtResource( 199 ), ExtResource( 198 ), ExtResource( 181 ) ],
+"loop": true,
+"name": "02A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 470 ) ],
+"loop": false,
+"name": "02B",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 182 ), ExtResource( 190 ), ExtResource( 194 ), ExtResource( 185 ), ExtResource( 197 ), ExtResource( 201 ), ExtResource( 186 ), ExtResource( 202 ), ExtResource( 172 ), ExtResource( 203 ), ExtResource( 187 ), ExtResource( 179 ), ExtResource( 180 ), ExtResource( 169 ), ExtResource( 173 ), ExtResource( 191 ), ExtResource( 174 ), ExtResource( 195 ), ExtResource( 188 ), ExtResource( 196 ), ExtResource( 175 ), ExtResource( 171 ), ExtResource( 170 ), ExtResource( 189 ), ExtResource( 176 ), ExtResource( 178 ), ExtResource( 337 ), ExtResource( 348 ), ExtResource( 361 ), ExtResource( 367 ) ],
+"loop": true,
+"name": "03A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 182 ) ],
+"loop": false,
+"name": "03B",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 331 ), ExtResource( 336 ), ExtResource( 345 ), ExtResource( 321 ), ExtResource( 349 ), ExtResource( 355 ), ExtResource( 340 ), ExtResource( 356 ), ExtResource( 344 ), ExtResource( 326 ), ExtResource( 366 ), ExtResource( 317 ), ExtResource( 353 ), ExtResource( 368 ), ExtResource( 322 ), ExtResource( 325 ), ExtResource( 334 ), ExtResource( 362 ), ExtResource( 365 ), ExtResource( 369 ), ExtResource( 378 ), ExtResource( 339 ), ExtResource( 357 ), ExtResource( 327 ), ExtResource( 358 ), ExtResource( 338 ), ExtResource( 346 ), ExtResource( 332 ), ExtResource( 351 ), ExtResource( 371 ) ],
+"loop": false,
+"name": "04A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 371 ) ],
+"loop": false,
+"name": "04B",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 330 ), ExtResource( 363 ), ExtResource( 359 ), ExtResource( 350 ), ExtResource( 333 ), ExtResource( 347 ), ExtResource( 328 ), ExtResource( 364 ), ExtResource( 352 ), ExtResource( 354 ), ExtResource( 329 ), ExtResource( 360 ), ExtResource( 370 ), ExtResource( 316 ), ExtResource( 372 ) ],
+"loop": false,
+"name": "05A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 318 ), ExtResource( 373 ), ExtResource( 374 ), ExtResource( 335 ), ExtResource( 341 ), ExtResource( 375 ), ExtResource( 376 ), ExtResource( 377 ), ExtResource( 315 ), ExtResource( 319 ), ExtResource( 320 ), ExtResource( 323 ), ExtResource( 343 ), ExtResource( 342 ), ExtResource( 324 ) ],
+"loop": false,
+"name": "05B",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 405 ), ExtResource( 421 ), ExtResource( 411 ), ExtResource( 381 ), ExtResource( 388 ), ExtResource( 431 ), ExtResource( 389 ), ExtResource( 437 ), ExtResource( 442 ), ExtResource( 430 ), ExtResource( 436 ), ExtResource( 414 ), ExtResource( 406 ), ExtResource( 413 ), ExtResource( 394 ) ],
+"loop": false,
+"name": "06A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 427 ), ExtResource( 407 ), ExtResource( 419 ), ExtResource( 428 ), ExtResource( 395 ), ExtResource( 440 ), ExtResource( 382 ), ExtResource( 433 ), ExtResource( 398 ), ExtResource( 408 ), ExtResource( 429 ), ExtResource( 432 ), ExtResource( 415 ), ExtResource( 396 ), ExtResource( 387 ) ],
+"loop": false,
+"name": "06B",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 401 ), ExtResource( 379 ), ExtResource( 390 ), ExtResource( 391 ), ExtResource( 438 ), ExtResource( 422 ), ExtResource( 404 ), ExtResource( 409 ), ExtResource( 416 ), ExtResource( 392 ), ExtResource( 410 ), ExtResource( 434 ), ExtResource( 412 ), ExtResource( 423 ), ExtResource( 384 ), ExtResource( 425 ), ExtResource( 383 ), ExtResource( 435 ), ExtResource( 417 ), ExtResource( 418 ), ExtResource( 385 ), ExtResource( 439 ), ExtResource( 397 ), ExtResource( 441 ), ExtResource( 386 ), ExtResource( 380 ), ExtResource( 420 ), ExtResource( 393 ), ExtResource( 399 ), ExtResource( 400 ) ],
+"loop": true,
+"name": "07A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 401 ) ],
+"loop": false,
+"name": "07B",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 402 ), ExtResource( 424 ), ExtResource( 403 ), ExtResource( 426 ), ExtResource( 448 ), ExtResource( 449 ), ExtResource( 445 ), ExtResource( 444 ), ExtResource( 454 ), ExtResource( 443 ), ExtResource( 450 ), ExtResource( 451 ), ExtResource( 452 ), ExtResource( 455 ), ExtResource( 446 ), ExtResource( 447 ), ExtResource( 301 ), ExtResource( 259 ), ExtResource( 288 ), ExtResource( 289 ), ExtResource( 284 ), ExtResource( 246 ), ExtResource( 257 ), ExtResource( 260 ), ExtResource( 261 ), ExtResource( 296 ), ExtResource( 306 ), ExtResource( 290 ), ExtResource( 285 ), ExtResource( 294 ) ],
+"loop": true,
+"name": "08A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 402 ) ],
+"loop": false,
+"name": "08B",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 291 ), ExtResource( 247 ), ExtResource( 295 ), ExtResource( 307 ), ExtResource( 263 ), ExtResource( 255 ), ExtResource( 272 ), ExtResource( 253 ), ExtResource( 282 ), ExtResource( 269 ), ExtResource( 299 ), ExtResource( 251 ), ExtResource( 248 ), ExtResource( 256 ), ExtResource( 271 ), ExtResource( 308 ), ExtResource( 297 ), ExtResource( 293 ), ExtResource( 249 ), ExtResource( 302 ), ExtResource( 258 ), ExtResource( 292 ), ExtResource( 298 ), ExtResource( 245 ), ExtResource( 264 ), ExtResource( 250 ), ExtResource( 262 ), ExtResource( 265 ), ExtResource( 277 ) ],
+"loop": true,
+"name": "09A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "09B",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 252 ), ExtResource( 300 ), ExtResource( 286 ), ExtResource( 266 ), ExtResource( 267 ), ExtResource( 303 ), ExtResource( 254 ), ExtResource( 268 ), ExtResource( 273 ), ExtResource( 270 ), ExtResource( 274 ), ExtResource( 275 ), ExtResource( 276 ), ExtResource( 304 ), ExtResource( 278 ) ],
+"loop": false,
+"name": "10A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 279 ), ExtResource( 280 ), ExtResource( 281 ), ExtResource( 283 ), ExtResource( 287 ), ExtResource( 305 ), ExtResource( 309 ), ExtResource( 311 ), ExtResource( 310 ), ExtResource( 313 ), ExtResource( 312 ), ExtResource( 314 ), ExtResource( 453 ), ExtResource( 110 ), ExtResource( 145 ) ],
+"loop": false,
+"name": "10B",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 128 ), ExtResource( 97 ), ExtResource( 155 ), ExtResource( 107 ), ExtResource( 113 ), ExtResource( 134 ), ExtResource( 153 ), ExtResource( 109 ), ExtResource( 115 ), ExtResource( 102 ), ExtResource( 147 ), ExtResource( 116 ), ExtResource( 95 ), ExtResource( 148 ), ExtResource( 130 ) ],
+"loop": false,
+"name": "11A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 92 ), ExtResource( 96 ), ExtResource( 146 ), ExtResource( 114 ), ExtResource( 108 ), ExtResource( 111 ), ExtResource( 117 ), ExtResource( 149 ), ExtResource( 150 ), ExtResource( 98 ), ExtResource( 129 ), ExtResource( 131 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 151 ) ],
+"loop": false,
+"name": "11B",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 137 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 123 ), ExtResource( 105 ), ExtResource( 136 ), ExtResource( 125 ), ExtResource( 135 ), ExtResource( 127 ), ExtResource( 138 ), ExtResource( 118 ), ExtResource( 124 ), ExtResource( 144 ), ExtResource( 112 ), ExtResource( 101 ), ExtResource( 139 ), ExtResource( 106 ), ExtResource( 122 ), ExtResource( 103 ), ExtResource( 119 ), ExtResource( 152 ), ExtResource( 142 ), ExtResource( 126 ), ExtResource( 120 ), ExtResource( 154 ), ExtResource( 104 ), ExtResource( 121 ), ExtResource( 93 ), ExtResource( 140 ), ExtResource( 94 ) ],
+"loop": true,
+"name": "12A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 137 ) ],
+"loop": false,
+"name": "12B",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 141 ), ExtResource( 143 ), ExtResource( 162 ), ExtResource( 164 ), ExtResource( 156 ), ExtResource( 163 ), ExtResource( 165 ), ExtResource( 167 ), ExtResource( 161 ), ExtResource( 166 ), ExtResource( 160 ), ExtResource( 159 ), ExtResource( 168 ), ExtResource( 157 ), ExtResource( 158 ), ExtResource( 78 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 77 ), ExtResource( 47 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 48 ), ExtResource( 86 ), ExtResource( 61 ), ExtResource( 28 ), ExtResource( 67 ), ExtResource( 33 ), ExtResource( 62 ), ExtResource( 70 ) ],
+"loop": true,
+"name": "13A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 141 ) ],
+"loop": false,
+"name": "13B",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 75 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 66 ), ExtResource( 34 ), ExtResource( 79 ), ExtResource( 87 ), ExtResource( 83 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 88 ), ExtResource( 39 ), ExtResource( 69 ), ExtResource( 51 ), ExtResource( 76 ), ExtResource( 64 ), ExtResource( 71 ), ExtResource( 65 ), ExtResource( 89 ), ExtResource( 68 ), ExtResource( 57 ), ExtResource( 72 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 90 ), ExtResource( 59 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "14A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 75 ) ],
+"loop": false,
+"name": "14B",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 91 ), ExtResource( 29 ), ExtResource( 37 ), ExtResource( 30 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 60 ), ExtResource( 44 ) ],
+"loop": false,
+"name": "15A",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 45 ), ExtResource( 46 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 213 ), ExtResource( 240 ), ExtResource( 231 ), ExtResource( 224 ), ExtResource( 222 ), ExtResource( 212 ), ExtResource( 211 ), ExtResource( 232 ), ExtResource( 239 ), ExtResource( 225 ), ExtResource( 223 ) ],
+"loop": false,
+"name": "15B",
+"speed": 30.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "default",
+"speed": 1.0
+} ]

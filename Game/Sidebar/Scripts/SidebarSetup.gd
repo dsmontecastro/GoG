@@ -2,7 +2,6 @@ extends "res://Game/Setup.gd"
 
 onready var Game = get_parent().get_parent()
 
-var unitScene = preload("res://Game/Units/Scenes/Unit.tscn")
 var dragScript = load("res://Game/Units/Scripts/Drag.gd")
 
 const _order = [
@@ -16,7 +15,7 @@ const _order = [
 
 
 const order = [   # Test
-			[5, 0, 0, 0],
+			[2, 0, 0, 0],
 			[0, 0, 0, 0],
 			[0, 0, 0, 0],
 			[0, 0, 0, 0],
@@ -64,24 +63,17 @@ func createUnit(type: int, x: int, y: int):
 
 	# Unit Creations
 	var unit = unitScene.instance()
+
 	unit.set_script(dragScript)
 	tiles.add_child(unit)
 
 	# Basic Unit Properties
 	var pos = gridToGlobal(x, y)
-	unit.add_to_group("Units", true)
 	unit.originate(pos, self)
 	unit.set_type(type)
-	unit.swapAnim(type)
 
 	# Team-based Properties
-	if !isHost:
-		unit.swapColor()
-		if type != 1: unit.face(PI)
+	if !isHost: unit.swapTeam()
 
+	unit.add_to_group("Units", true)
 	unit.connect("drop", Game, "dropUnit")
-	
-
-func gridToGlobal(x: int, y: int) -> Vector2:
-	var pos = tiles.map_to_world(Vector2(x, y))
-	return pos + tileHalf

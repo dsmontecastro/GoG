@@ -10,8 +10,10 @@ var specs = Vector2.ZERO
 var grid = []
 
 
-
 func moveUnit(from: Vector2, move: Vector2):
+
+	if move == Vector2.ZERO: return
+
 	print(from, " to ", move)
 
 
@@ -36,16 +38,17 @@ func dropUnit(unit: Area2D, move: Vector2):
 	var fromTile = unit.get_parent()
 	var fromArea = fromTile.get_parent()
 	var fromPos = fromTile.to_local(unit.origin)
-	var from = fromTile.world_to_map(fromPos)
 
 	var currArea = unit.currArea
 	var currTile = currArea.get_node("Tiles")
 	var currPos = currTile.to_local(move)
-	var to = currTile.world_to_map(currPos)
-	to.x = clamp(to.x, 0, currArea.specs.x)
-	to.y = clamp(to.y, 0, currArea.specs.y)
 
-	if not currArea.isEmpty(to.y, to.x):
+	var from = fromTile.world_to_map(fromPos)
+	move = currTile.world_to_map(currPos)
+	move.x = clamp(move.x, 0, currArea.specs.x)
+	move.y = clamp(move.y, 0, currArea.specs.y)
+
+	if not currArea.isEmpty(move.y, move.x):
 		unit.position = fromPos
 		return
 
@@ -54,5 +57,5 @@ func dropUnit(unit: Area2D, move: Vector2):
 		currTile.add_child(unit)
 
 	fromArea.grid[from.y][from.x] = 0
-	currArea.grid[to.y][to.x] = unit.type
-	unit.positionByIndex(to)
+	currArea.grid[move.y][move.x] = unit.type
+	unit.positionByIndex(move)

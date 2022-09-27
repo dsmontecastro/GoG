@@ -14,17 +14,12 @@ var origin = Vector2.ZERO
 var currArea = null
 
 
-# Built-in Functions
+# Inherited Functions
 func _ready():
 	connect("area_entered", self, "areaEntered")
 	connect("area_exited", self, "areaExited")
 	connect("input_event", self, "dragUnit")
 	set_process(false)
-
-func _process(delta):
-	var mouse = get_global_mouse_position()
-	var pos = lerp(global_position, mouse, 25 * delta)
-	set_global_position(pos)
 
 
 # Disconnect Signals
@@ -41,13 +36,9 @@ func originate(pos: Vector2, area: Area2D):
 	origin = global_position
 
 
-# Area Functions
+# Area Tracking
 func areaEntered(area: Area2D): currArea = area
 func areaExited(_area: Area2D): currArea = null
-func areaToggle(val: bool):
-	input_pickable = val
-	monitorable = val
-	monitoring = val
 
 
 # Dragging and Positioning
@@ -64,13 +55,22 @@ func dragUnit(_vp, _event, _idx):
 			emit_signal("drop", self, pos)
 		else: set_global_position(origin)
 
+func _process(delta):
+	var mouse = get_global_mouse_position()
+	var pos = lerp(global_position, mouse, 25 * delta)
+	set_global_position(pos)
 
+
+# Helper Functions
 func toggleDrag(val: bool):
 
-	if val: 
+	if val:
+		z_index = 9
 		if group in get_groups():
 			remove_from_group(group)
-	else: add_to_group(group)
+	else:
+		z_index = 0
+		add_to_group(group)
 
 	get_tree().call_group(group, gFunc, !val)
 	set_process(val)

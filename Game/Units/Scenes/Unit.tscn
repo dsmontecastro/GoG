@@ -1,26 +1,26 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Game/Units/Assets/00.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Game/Units/Assets/Anims.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Game/Board/Assets/Tiles.tres" type="TileSet" id=2]
-[ext_resource path="res://Game/Units/Scripts/Unit.gd" type="Script" id=3]
+[ext_resource path="res://Shaders/Glitch.material" type="Material" id=3]
+[ext_resource path="res://Game/Units/Assets/Deaths/Deaths.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://Shaders/Brighten.material" type="Material" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 30 )
 
 [node name="Unit" type="Area2D"]
 z_index = 1
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Moves" type="TileMap" parent="."]
 visible = false
-modulate = Color( 1, 0, 0, 0.0392157 )
+material = ExtResource( 5 )
 position = Vector2( -30, -30 )
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 60, 60 )
-show_collision = true
 format = 1
 tile_data = PoolIntArray( -1, -1073741824, 0, -65536, -1073741824, 0, -65535, -1073741824, 0, 65535, -1073741824, 0, 1, -1073741824, 0, 131071, -1073741824, 0, 65536, -1073741824, 0, 65537, -1073741824, 0 )
 __meta__ = {
@@ -36,12 +36,31 @@ __meta__ = {
 
 [node name="Anim" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
-z_index = 1
+z_as_relative = false
 frames = ExtResource( 1 )
 speed_scale = 1.5
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Icon" type="Sprite" parent="."]
+[node name="Filters" type="Node2D" parent="."]
+position = Vector2( -25, -25 )
+
+[node name="Glitch" type="ColorRect" parent="Filters"]
+visible = false
+material = ExtResource( 3 )
+margin_right = 50.0
+margin_bottom = 50.0
+mouse_filter = 2
+input_pass_on_modal_close_click = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Kill" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.1, 0.1 )
+z_index = 2
+frames = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}

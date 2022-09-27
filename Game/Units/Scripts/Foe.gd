@@ -1,16 +1,21 @@
 extends "res://Game/Units/Scripts/Unit.gd"
 
-onready var icon = 16
 
 # Built-in Functions
 func _ready():
 	connect("input_event", self, "clickUnit")
-	swapIcon(icon)
+	Glitch.show()
 
 
 # Clicking Handler
+onready var icon = 16
+onready var clickable = true
+
+func toggleInput(val: bool): clickable = val
 
 func clickUnit(_v, _e, _i):
+
+	if !clickable: return
 
 	var click = Input.is_action_just_pressed("Click")
 	var swapUp = Input.is_action_just_pressed("SwapUp")
@@ -20,24 +25,19 @@ func clickUnit(_v, _e, _i):
 	if click or swapUp: newIcon += 1
 	elif swapDown: newIcon -= 1
 	
-	if newIcon != icon: swapUnit(newIcon)
+	if newIcon != icon: cycleIcon(newIcon)
 
 
 # Helper Functions
-func swapUnit(newIcon: int) -> void:
-	icon = clampType(newIcon)
-	swapIcon(icon)
-	orient()
-
 const types = 16
-func clampType(val: int) -> int:
-	val = val % types
-	if !val: val = 16
-	return val
+func cycleIcon(val: int):
+	icon = val % types
+	orientIcon(icon)
+	swapAnim(icon)
 
-func orient():
-
+#const exempt = [1, 16]
+func orientIcon(val: int):
 	if team > 0: return
-	var flag = (icon == 1) or (icon == 16)
-	if flag: face(0)
-	else: face(PI)
+	#if val in exempt: face(0)
+	if val > 1: faceAnim(dir + PI)
+	else: faceAnim(0)
