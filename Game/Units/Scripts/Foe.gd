@@ -1,43 +1,48 @@
 extends "res://Game/Units/Scripts/Unit.gd"
 
 
-# Built-in Functions
+# Basic Functions ------------------------------------------------------------------------------- #
+
 func _ready():
-	connect("input_event", self, "clickUnit")
+	add_to_group("Units", true)
+	add_to_group("Enemies", true)
+	connect("input_event", self, "cycle_unit")
 	Glitch.show()
 
 
-# Clicking Handler
-onready var icon = 16
-onready var clickable = true
+# Cycling Toggle -------------------------------------------------------------------------------- #
 
-func toggleInput(val: bool): clickable = val
+var ACTIVE = true
+func toggle(val: bool): ACTIVE = val
 
-func clickUnit(_v, _e, _i):
 
-	if !clickable: return
+# Icon Cycling ---------------------------------------------------------------------------------- #
+
+var ICON = 16
+
+func cycle_unit(_v, _e, _i):
+
+	if not ACTIVE: return
 
 	var click = Input.is_action_just_pressed("Click")
 	var swapUp = Input.is_action_just_pressed("SwapUp")
 	var swapDown = Input.is_action_just_pressed("SwapDown")
 
-	var newIcon = icon
+	var newIcon = ICON
 	if click or swapUp: newIcon += 1
 	elif swapDown: newIcon -= 1
 	
-	if newIcon != icon: cycleIcon(newIcon)
+	if newIcon != ICON: cycle(newIcon)
 
 
-# Helper Functions
-const types = 16
-func cycleIcon(val: int):
-	icon = val % types
-	orientIcon(icon)
-	swapAnim(icon)
+# Helper Functions ------------------------------------------------------------------------------ #
 
-#const exempt = [1, 16]
-func orientIcon(val: int):
-	if team > 0: return
-	#if val in exempt: face(0)
-	if val > 1: faceAnim(dir + PI)
-	else: faceAnim(0)
+func cycle(val: int):
+	ICON = val % TYPES
+	swap_anim(ICON)
+	redirect(ICON)
+
+func redirect(val: int):
+	if TEAM == -1:
+		if val > 1: face_anim(DIR + PI)
+		else: face_anim(0)

@@ -139,8 +139,20 @@ position = Vector2( 60, 60 )
 [node name="Tiles" parent="Sidebar/Setup" index="0"]
 tile_set = SubResource( 5 )
 
-[connection signal="finished" from="Sidebar/Setup" to="." method="_on_Setup_finished"]
-[connection signal="reset" from="Sidebar/Setup" to="." method="_on_Setup_reset"]
+[node name="Buttons" parent="Sidebar/Setup" index="1"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ready" parent="Sidebar/Setup/Buttons" index="0"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Reset" parent="Sidebar/Setup/Buttons" index="1"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [editable path="Board"]
 [editable path="Sidebar/Setup"]

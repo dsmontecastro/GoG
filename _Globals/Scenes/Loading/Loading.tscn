@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://_Globals/Scenes/Loading/Transitions.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://_Globals/Scenes/Loading/Loading.gd" type="Script" id=2]
+[ext_resource path="res://Game/Units/Assets/Frames/09/01.png" type="Texture" id=3]
+
+[node name="Transit" type="CanvasLayer"]
+layer = 15
+script = ExtResource( 2 )
+
+[node name="Anim" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "0"
+speed_scale = 1.5
+centered = false
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 513, 291 )
+texture = ExtResource( 3 )

@@ -11,14 +11,18 @@ config_version=4
 [application]
 
 config/name="[Godot] Games Of The General"
-run/main_scene="res://Menu/Scenes/menuMain.tscn"
+run/main_scene="res://Menu/Scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-USER="*res://Steam/User.gd"
-LOBBY="*res://Steam/Lobby.gd"
-P2P="*res://Steam/P2P.gd"
+USER="*res://_Globals/Steam/User.gd"
+LOBBY="*res://_Globals/Steam/Lobby.gd"
+P2P="*res://_Globals/Steam/P2P.gd"
+SIGNALS="*res://_Globals/Signals.gd"
+ROOT="*res://_Globals/Root.gd"
+WARN="*res://_Globals/Scenes/Warning/Warning.tscn"
+LOADER="*res://_Globals/Scenes/Loading/Loading.tscn"
 
 [debug]
 

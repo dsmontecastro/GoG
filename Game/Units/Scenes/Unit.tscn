@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Game/Units/Assets/Anims.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Game/Board/Assets/Tiles.tres" type="TileSet" id=2]
-[ext_resource path="res://Shaders/Glitch.material" type="Material" id=3]
+[ext_resource path="res://_Misc/Shaders/Glitch.material" type="Material" id=3]
 [ext_resource path="res://Game/Units/Assets/Deaths/Deaths.tres" type="SpriteFrames" id=4]
-[ext_resource path="res://Shaders/Brighten.material" type="Material" id=5]
+[ext_resource path="res://_Misc/Shaders/Brighten.material" type="Material" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 30 )

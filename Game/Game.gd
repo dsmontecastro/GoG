@@ -1,61 +1,52 @@
 extends Node2D
 
-var gameScript = load("res://Game/Board/Scripts/BoardGame.gd")
+var gameScript = load("res://Game/Board/Scripts/Game.gd")
 
 onready var Board = $Board
 onready var Tiles = $Board/Tiles
 onready var Setup = $Sidebar/Setup
 
-var specs = Vector2.ZERO
-var grid = []
 
+# Basic Functions ------------------------------------------------------------------------------- #
 
-func moveUnit(from: Vector2, move: Vector2):
+func _ready():
+	SIGNALS.connect("drop", self, "drop_unit")
+	SIGNALS.connect("setup_reset", self, "_reset")
+	SIGNALS.connect("setup_finished", self, "_start")
 
-	if move == Vector2.ZERO: return
-
-	print(from, " to ", move)
-
-
-# Setup Functions
-
-func _on_Setup_reset(): Board.reset()
-
-
-func _on_Setup_finished():
-
-
-	grid = Board.grid
-	specs = Board.specs
-
-	Board.setupFinished()
+func _start():
+	Board._start()
 	Board.set_script(gameScript)
 	Board._ready()
 
+func _reset(): Board._reset()
 
-func dropUnit(unit: Area2D, move: Vector2):
+
+# Drag-&-Drop ----------------------------------------------------------------------------------- #
+
+func drop_unit(unit: Area2D, move: Vector2):
 	
 	var fromTile = unit.get_parent()
 	var fromArea = fromTile.get_parent()
-	var fromPos = fromTile.to_local(unit.origin)
+	var fromPos = fromTile.to_local(unit.ORIGIN)
 
 	var currArea = unit.currArea
-	var currTile = currArea.get_node("Tiles")
+	var currTile = currArea.Tiles
 	var currPos = currTile.to_local(move)
 
 	var from = fromTile.world_to_map(fromPos)
 	move = currTile.world_to_map(currPos)
-	move.x = clamp(move.x, 0, currArea.specs.x)
-	move.y = clamp(move.y, 0, currArea.specs.y)
+	move.x = clamp(move.x, 0, currArea.SPECS.y - 1)
+	move.y = clamp(move.y, 0, currArea.SPECS.x - 1)
 
-	if not currArea.isEmpty(move.y, move.x):
-		unit.position = fromPos
-		return
+	if currArea.is_empty(move.x, move.y):
 
-	if currArea != fromArea:
-		fromTile.remove_child(unit)
-		currTile.add_child(unit)
+		if currArea != fromArea:
+			fromTile.remove_child(unit)
+			currTile.add_child(unit)
 
-	fromArea.grid[from.y][from.x] = 0
-	currArea.grid[move.y][move.x] = unit.type
-	unit.positionByIndex(move)
+		fromArea.ARRAY[from.y][from.x] = 0
+		currArea.ARRAY[move.y][move.x] = unit.TYPE
+		unit.drop_unit(move)
+
+	else: unit.position = fromPos

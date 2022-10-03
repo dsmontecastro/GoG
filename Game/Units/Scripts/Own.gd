@@ -3,56 +3,54 @@ extends "res://Game/Units/Scripts/Unit.gd"
 onready var Moves = $Moves
 
 
-# Built-in Functions
+# Basic Functions ------------------------------------------------------------------------------- #
+
 func _ready():
-	disconnect("mouse_exited", self, "mouseOut")
-	connect("mouse_exited", self, "focusOff")
-	connect("input_event", self, "clickUnit")
+	add_to_group("Units", true)
+	add_to_group("Allies", true)
+	disconnect("mouse_exited", self, "mouse_out")
+	connect("input_event", self, "move_unit")
+	connect("mouse_exited", self, "unfocus")
 	set_dir(Anim.global_rotation)
 	set_process(false)
 
-
-# Overriden Functions
 func _reset():
-	connect("mouse_exited", self, "focusOff")
-	connect("input_event", self, "clickUnit")
-	toggleEnemies(true)
-	rotateAnim(dir)
+	connect("input_event", self, "move_unit")
+	connect("mouse_exited", self, "unfocus")
+	toggle_foes(true)
+	spin_anim(DIR)
 	Anim.stop()
 
 
-# Move Toggling
-func focusOff():
-	toggleMoves(false)
-	rotateAnim(dir)
+# Basic Functions ------------------------------------------------------------------------------- #
 
-func toggleMoves(val: bool):
+func unfocus():
+	toggle_moves(false)
+	spin_anim(DIR)
+
+func toggle_foes(val: bool):
+	get_tree().call_group("Enemies", "toggle", val)
+
+func toggle_moves(val: bool):
+
+	set_process(val)
+	toggle_foes(!val)
+	if !val: mouse_out()
 
 	$Moves.visible = val
 	$Moves.collision_use_parent = val
 
-	set_process(val)
-	toggleEnemies(!val)
-	if !val: mouseOut()
-
-func toggleEnemies(val: bool):
-	get_tree().call_group("Enemies", "toggleInput", val)
 
 
-# Move Pickers
-func clickUnit(_v, _e, _i):
+# Movement Functions --------------------------------------------------------------------------- #
+
+func move_unit(_v, _e, _i):
 	if Input.is_action_just_pressed("Click"):
-		if is_processing(): sendMove(get_global_mouse_position())
-		else: toggleMoves(true)
-
-func _process(_delta):
-	var mouse = get_global_mouse_position()
-	Anim.look_at(mouse)
-	Anim.rotate(-PI/2)
+		if is_processing(): send_move(get_global_mouse_position())
+		else: toggle_moves(true)
 
 
-# Signal Emissions
-func sendMove(move: Vector2):
+func send_move(move: Vector2):
 
 	var from = Grid.world_to_map(position)
 
@@ -60,10 +58,16 @@ func sendMove(move: Vector2):
 	move = Moves.world_to_map(move)
 
 	if move != Vector2.ZERO:
-		var to = from + move
-		if Board.isValidMove(to):
-			disconnect("mouse_exited", self, "focusOff")
-			disconnect("input_event", self, "clickUnit")
-			emit_signal("move", from, move)
-			toggleMoves(false)
+		if Board.is_valid_move(from + move):
+			disconnect("input_event", self, "move_unit")
+			disconnect("mouse_exited", self, "unfocus")
+			SIGNALS.emit_signal("move", from, move)
+			toggle_moves(false)
 
+
+# Orient towards Mouse -------------------------------------------------------------------------- #
+
+func _process(_delta):
+	var mouse = get_global_mouse_position()
+	Anim.look_at(mouse)
+	Anim.rotate(-PI/2)

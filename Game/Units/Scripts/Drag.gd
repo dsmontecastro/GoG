@@ -1,85 +1,81 @@
 extends "res://Game/Units/Scripts/Unit.gd"
 
-# Path Constants (isValid)
-const gridMap = "/root/Game/Board/Tiles"
-const setupMap = "/root/Game/Sidebar/Setup/Tiles"
 
-# Group Constants (toggleDrag)
-const group = "Units"
-const gFunc = "areaToggle"
+# Basic Functions ------------------------------------------------------------------------------- #
 
-
-# Trackers
-var origin = Vector2.ZERO
-var currArea = null
-
-
-# Inherited Functions
 func _ready():
-	connect("area_entered", self, "areaEntered")
-	connect("area_exited", self, "areaExited")
-	connect("input_event", self, "dragUnit")
+	connect("area_entered", self, "area_entered")
+	connect("area_exited", self, "area_exited")
+	connect("input_event", self, "drag_unit")
+	add_to_group("Units", true)
 	set_process(false)
 
+func _start(): #: Is this necessary?
+	disconnect("area_entered", self, "area_entered")
+	disconnect("area_exited", self, "area_exited")
+	disconnect("input_event", self, "drag_unit")
 
-# Disconnect Signals
-func setupFinished():
-	disconnect("area_entered", self, "areaEntered")
-	disconnect("area_exited", self, "areaExited")
-	disconnect("input_event", self, "dragUnit")
+func _reset(): set_global_position(ORIGIN)
 
 
-# Initalization (during Setup)
+# Initalizing Origin (for resetting Drag-&-Drop) ------------------------------------------------ #
+
+var ORIGIN = Vector2.ZERO
 func originate(pos: Vector2, area: Area2D):
 	currArea = area
 	set_position(pos)
-	origin = global_position
+	ORIGIN = global_position
 
 
-# Area Tracking
-func areaEntered(area: Area2D): currArea = area
-func areaExited(_area: Area2D): currArea = null
+# Area Tracking (for validating Drag-&-Drop) ---------------------------------------------------- #
+
+var currArea: Area2D = null
+func area_entered(area: Area2D): currArea = area
+func area_exited(_area: Area2D): currArea = null
 
 
-# Dragging and Positioning
-signal drop(unit, move)
-
-func dragUnit(_vp, _event, _idx):
-	var locked = is_processing()
-	if not locked and Input.is_action_just_pressed("Click"):
-		toggleDrag(true)
-	elif locked and Input.is_action_just_released("Click"):
-		toggleDrag(false)
-		if currArea != null:
-			var pos = get_global_mouse_position()
-			emit_signal("drop", self, pos)
-		else: set_global_position(origin)
+# Drag-&-Drop Functions ------------------------------------------------------------------------- #
 
 func _process(delta):
-	var mouse = get_global_mouse_position()
-	var pos = lerp(global_position, mouse, 25 * delta)
-	set_global_position(pos)
+	var mouse_pos = get_global_mouse_position()
+	var new_pos = lerp(global_position, mouse_pos, 25 * delta)
+	set_global_position(new_pos)
 
 
-# Helper Functions
-func toggleDrag(val: bool):
+const GROUP = "Units"
+func toggle_drag(val: bool):
 
 	if val:
-		z_index = 9
-		if group in get_groups():
-			remove_from_group(group)
+		z_index = 10
+		if GROUP in get_groups():
+			remove_from_group(GROUP)
 	else:
 		z_index = 0
-		add_to_group(group)
+		add_to_group(GROUP)
 
-	get_tree().call_group(group, gFunc, !val)
+	get_tree().call_group(GROUP, "mouse_toggle", !val)
 	set_process(val)
 
 
-func positionByIndex(pos: Vector2):
+func drag_unit(_vp, _event, _idx):
+
+	var locked = is_processing()
+
+	if not locked and Input.is_action_just_pressed("Click"): toggle_drag(true)
+
+	elif locked and Input.is_action_just_released("Click"):
+
+		toggle_drag(false)
+
+		if currArea == null: _reset()
+
+		else: SIGNALS.emit_signal("drop", self, get_global_mouse_position())
+
+
+func drop_unit(pos: Vector2):
 
 	var t_size = get_parent().get_cell_size()
 	var offset = t_size / 2
 
 	position = pos * t_size + offset
-	origin = global_position
+	ORIGIN = global_position

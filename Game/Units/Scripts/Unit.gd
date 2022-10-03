@@ -1,6 +1,8 @@
 extends Area2D
 
-# Resusable Refs
+
+# Initializing References ----------------------------------------------------------------------- #
+
 var Board = null
 var Grid = null
 var Anim = null
@@ -8,8 +10,6 @@ var Kill = null
 var Filter = null
 var Glitch = null
 
-
-# Built-in Functions
 func _init():
 
 	Anim = $Anim
@@ -22,94 +22,110 @@ func _init():
 		Board = Grid.get_parent()
 	else: Board = null
 
+
+# Basic Functions ------------------------------------------------------------------------------- #
+
 func _ready():
-	Kill.connect("animation_finished", self, "queue_free")
-	connect("mouse_entered", self, "mouseIn")
-	connect("mouse_exited", self, "mouseOut")
+	connect("mouse_entered", self, "mouse_in")
+	connect("mouse_exited", self, "mouse_out")
 	add_to_group("Units", true)
 	randomize()
 
-
-# To be Overriden
+func _start(): pass
 func _reset(): pass
 
 
-# Mouse Handling
-func mouseIn():
-	rescale(bigger)
-	playAnim()
+# Type & Team Setting --------------------------------------------------------------------------- #
 
-func mouseOut():
-	rescale(normal)
-	exitAnim()
+var TEAM = 1
+var TYPE = 0
+const TYPES = 16
+
+func set_type(val: int):
+	TYPE = val
+	if val <= 0: val = 0
+	swap_anim(val)
+
+func set_team(val: int): TEAM = val
+
+func swap_team():
+	TEAM *= -1
+	swap_color()
+	if TYPE != 1: set_dir(PI)
+
+const invertModulate = Color(0.25, 0.25, 0.25)	# Matches Board Color
+var invertMaterial = load("res://_Misc/Shaders/Invert.material")
+
+func swap_color():
+	Anim.material = invertMaterial
+	Anim.modulate = invertModulate
+	Anim.visible = true
 
 
-# Toggle Pickability
-func areaToggle(val: bool):
+# Mouse Handling -------------------------------------------------------------------------------- #
+
+func mouse_in():
+	rescale(BIGGER)
+	play_anim()
+
+func mouse_out():
+	rescale(NORMAL)
+	exit_anim()
+
+func mouse_toggle(val: bool):
 	input_pickable = val
 	monitorable = val
 	monitoring = val
 
 
-# Animations
-func swapAnim(val: int):
-	Anim.animation = "%02dA" % val
-	Anim.stop()
+# Scale Pop Tweening ---------------------------------------------------------------------------- #
 
-func playAnim():
-	if type > 0:
-		var _anim = Anim.animation
-		_anim[-1] = "A"
-		Anim.play(_anim)
-
-func exitAnim():
-	if type > 0:
-		var _anim = Anim.animation
-		_anim[-1] = "B"
-		Anim.play(_anim)
-
-
-# Animation Direction
-var dir = 0
-
-func set_dir(val: float):
-	dir = val
-	faceAnim(val)
-
-func faceAnim(val: float): Anim.global_rotation = val
-
-func rotateAnim(val: float):
-
-	if (val - Anim.global_rotation) > PI: val += 2 * PI
-
-	var tween = Anim.create_tween()
-	tween.tween_property(Anim, "global_rotation", val, 0.25)
-
-
-# Death Animation
-const kills = 3
-
-func die():
-
-	var anim = randi() % kills
-	Kill.play("%02d" % anim)
-
-	yield(get_tree().create_timer(1.0), "timeout")
-	Glitch.hide()
-	Anim.hide()
-
-
-# Scale Tween
-const normal = Vector2(0.1, 0.1)
-const bigger = normal * 1.1
+const NORMAL = Vector2(0.1, 0.1)
+const BIGGER = NORMAL * 1.1
 
 func rescale(val: Vector2):
 	var tween = create_tween()
 	tween.tween_property(Anim, "scale", val, 0.25)
 
 
-# Movement Tween
-signal move(unit, move)
+# Animation Controls (Media) -------------------------------------------------------------------- #
+
+func swap_anim(val: int):
+	Anim.animation = "%02dA" % val
+	Anim.stop()
+
+func play_anim():
+	if TYPE > 0:
+		var anim = Anim.animation
+		anim[-1] = "A"
+		Anim.play(anim)
+
+func exit_anim():
+	if TYPE > 0:
+		var anim = Anim.animation
+		anim[-1] = "B"
+		Anim.play(anim)
+
+
+# Animation Controls (Direction) ---------------------------------------------------------------- #
+
+var DIR = 0
+
+func set_dir(val: float):
+	DIR = val
+	face_anim(val)
+
+func face_anim(val: float): Anim.global_rotation = val
+
+func spin_anim(val: float = DIR):
+
+	if abs(val - Anim.global_rotation) > PI: val += 2 * PI
+
+	var tween = Anim.create_tween()
+	tween.tween_property(Anim, "global_rotation", val, 0.25)
+
+
+# Movement Controls ----------------------------------------------------------------------------- #
 
 func move(cell: Vector2):
 
@@ -119,25 +135,26 @@ func move(cell: Vector2):
 	var move = Grid.map_to_world(cell) + Board.tileHalf
 	tween.tween_property(self, "position", move, 0.25)
 
-	yield(get_tree().create_timer(0.25), "timeout")
+	yield(tween, "finished")
 	_reset()
 
+	SIGNALS.emit_signal("done_moving")
 
-# Type/Team Swapping
-var type = 0
-func set_type(val: int):
-	type = val
-	print(val)
-	if val > 0: swapAnim(val)
-	else: swapAnim(0)
 
-onready var team = 1
-func swapTeam():
-	team *= -1
-	swapColor()
-	if type != 1: set_dir(PI)
+# Death Animations ------------------------------------------------------------------------------ #
 
-func swapColor():
-	Anim.material = load("res://Shaders/Invert.material")
-	Anim.modulate = Color(0.25, 0.25, 0.25) # Match to Board Color
-	Anim.visible = true
+enum KILLS { BURST, SLICE, PIXEL }
+
+func die():
+
+	var anim = randi() % KILLS.size()
+	Kill.play("%02d" % anim)
+	
+	yield(get_tree().create_timer(1.0), "timeout")
+	Glitch.hide()
+	Anim.hide()
+
+	yield(Kill, "animation_finished")
+	queue_free()
+
+	SIGNALS.emit_signal("done_killing")
