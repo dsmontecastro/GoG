@@ -4,6 +4,7 @@ extends Node
 # Global -------------------------------------------------------------------- #
 
 signal warning(message)
+signal reset
 
 
 # Menu ---------------------------------------------------------------------- #
@@ -12,13 +13,23 @@ signal play(message)
 signal exit_opts
 
 
-# Game ---------------------------------------------------------------------- #
+# Game Signals -------------------------------------------------------------- #
+
+signal send
+signal read
+
+
+# Game Setup ---------------------------------------------------------------- #
 
 signal setup_reset
+signal setup_ready(val)
 signal setup_finished
 
-signal game_over(win)
 
+# Game Proper --------------------------------------------------------------- #
+
+signal game_play
+signal game_over(win)
 
 signal move()	# During Game Proper
 signal drop()	# During Setup

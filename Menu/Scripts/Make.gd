@@ -29,6 +29,7 @@ func _reset():
 	LOBBY.disconnect("host_success", self, "room_hosted")
 	LOBBY.disconnect("join_success", self, "room_joined")
 	LOBBY.disconnect("get_lobbies", self, "list_rooms")
+	LOBBY._leave()
 
 
 # Signaling Functions --------------------------------------------------------------------------- #

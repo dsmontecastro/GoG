@@ -1,36 +1,24 @@
-extends Area2D
-
-onready var Game = get_parent()
+extends "res://Game/Board/Scripts/Setup.gd"
 
 var EDGE = 0
 
 
-# Tilemap Info ---------------------------------------------------------------------------------- #
+# Gameplay Functions ---------------------------------------------------------------------------- #
 
-onready var Tiles = $Tiles
-onready var tileSize = Tiles.get_cell_size()
-onready var tileHalf = tileSize / 2
-
-const SPECS = Vector2(8, 9)
-var ARRAY = []
-
-
-# Basic Functions ------------------------------------------------------------------------------- #
-
-func _ready():
-
+func _play():
+	print("BP: Game")
 	SIGNALS.connect("move", self, "process_move")
+	SIGNALS.connect("game_over", self, "_over")
+	if USER.HOSTING: EDGE = SPECS.y - 1
 
-	if USER.isHost: EDGE = SPECS.y - 1
+func _over(win: bool):
 
-	ARRAY = ROOT.matrix(SPECS.x, SPECS.y)
+	if win: pass
 
-	for unit in Tiles.get_children():
-		var pos = Tiles.world_to_map(unit.position)
-		ARRAY[pos.y][pos.x] = unit
+	else: pass
 
 
-# Movement Processing --------------------------------------------------------------------------- #
+# Move Processing ------------------------------------------------------------------------------- #
 
 func is_valid_move(to: Vector2) -> bool:
 	return to.y in range(SPECS.x) and to.x in range(SPECS.y)
@@ -43,7 +31,9 @@ func process_move(from: Vector2, move: Vector2):
 
 
 	# Unit moves to free-space
-	if cell == null: move_unit(from, move, true)
+	if cell == null:
+		move_unit(from, move, true)
+		SIGNALS.emit_signal("end_turn")
 
 	# Unit confronts Enemy
 	elif unit.TEAM != cell.TEAM:
@@ -55,7 +45,6 @@ func process_move(from: Vector2, move: Vector2):
 		if (u == 15 and c == 2): kill_unit(from, true)
 		elif u < c and not (u == 2 and c == 15): kill_unit(from, true)
 
-		
 		else:	# Unit Win
 
 			kill_unit(move, true)
@@ -66,12 +55,14 @@ func process_move(from: Vector2, move: Vector2):
 
 			if c == 1: SIGNALS.emit_signal("game_over", true)
 
+		SIGNALS.emit_signal("end_turn")
+
 
 # Unit-based Functions -------------------------------------------------------------------------- #
 
 func kill_unit(pos: Vector2, send: bool = false):
 
-	# if send: emit_steam_signal("kill", move)
+	if send: P2P.send(P2P.MSSG.KILL_UNIT, pos)
 
 	var unit = ARRAY[pos.y][pos.x]
 	ARRAY[pos.y][pos.x] = null
@@ -82,31 +73,15 @@ func kill_unit(pos: Vector2, send: bool = false):
 
 func move_unit(from: Vector2, move: Vector2, send: bool = false):
 
-	# if send: emit_steam_signal("move", from, move)
+	if send: P2P.send(P2P.MSSG.MOVE_UNIT, [from, move])
 
 	var unit = ARRAY[from.y][from.x]
 	ARRAY[from.y][from.x] = null
 	ARRAY[move.y][move.x] = unit
-
 	unit.move(move)
 
 	#print("Move: %d to (%d:%d)" % [unit.type, move.y, move.x] )
 
 	# Flag moves to Opposite End
 	if unit.TYPE == 1 and move.x == EDGE:
-		SIGNALS.emit_signal("gameOver", true)
-
-
-# :DEBUGGING: ----------------------------------------------------------------------------------- #
-
-func printGrid():
-	for r in range(SPECS.x):
-		var row = ""
-		for c in range(SPECS.y):
-			var unit = ARRAY[r][c]
-			var type = 0
-			if unit != null:
-				type = unit.TYPE
-			row += ("%0+3d " % type)
-		print(row)
-	print()
+		SIGNALS.emit_signal("game_over", true)

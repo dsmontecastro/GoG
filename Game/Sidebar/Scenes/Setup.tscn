@@ -32,13 +32,16 @@ size_flags_vertical = 3
 custom_constants/separation = 15
 
 [node name="Ready" type="Button" parent="Buttons"]
+unique_name_in_owner = true
 margin_right = 97.0
 margin_bottom = 38.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
 text = "Ready"
 
 [node name="Reset" type="Button" parent="Buttons"]
+unique_name_in_owner = true
 margin_left = 112.0
 margin_right = 210.0
 margin_bottom = 38.0
@@ -47,5 +50,5 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Reset"
 
-[connection signal="pressed" from="Buttons/Ready" to="." method="_start"]
-[connection signal="pressed" from="Buttons/Reset" to="." method="_reset"]
+[connection signal="toggled" from="Buttons/Ready" to="." method="ready_toggled"]
+[connection signal="pressed" from="Buttons/Reset" to="." method="reset_pressed"]

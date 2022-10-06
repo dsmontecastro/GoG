@@ -7,6 +7,7 @@ func _ready():
 	connect("area_entered", self, "area_entered")
 	connect("area_exited", self, "area_exited")
 	connect("input_event", self, "drag_unit")
+	add_to_group("Allies", true)
 	add_to_group("Units", true)
 	set_process(false)
 
@@ -59,17 +60,19 @@ func toggle_drag(val: bool):
 
 func drag_unit(_vp, _event, _idx):
 
-	var locked = is_processing()
+	if not USER.READIED:
 
-	if not locked and Input.is_action_just_pressed("Click"): toggle_drag(true)
+		var locked = is_processing()
 
-	elif locked and Input.is_action_just_released("Click"):
+		if not locked and Input.is_action_just_pressed("Click"): toggle_drag(true)
 
-		toggle_drag(false)
+		elif locked and Input.is_action_just_released("Click"):
 
-		if currArea == null: _reset()
+			toggle_drag(false)
 
-		else: SIGNALS.emit_signal("drop", self, get_global_mouse_position())
+			if currArea == null: _reset()
+
+			else: SIGNALS.emit_signal("drop", self, get_global_mouse_position())
 
 
 func drop_unit(pos: Vector2):

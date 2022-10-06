@@ -17,20 +17,22 @@ func _ready(): set_process(false)
 func _start():
 	Cancel.grab_focus()
 	DIST = LOBBY.DIST.CLOSE
+	LOBBY.connect("get_lobbies", self, "matchmaking")
 	LOBBY.connect("lobby_update", self, "match_hosted")
 	LOBBY.connect("join_success", self, "match_joined")
-	LOBBY.connect("get_lobbies", self, "matchmaking")
 	set_counter(0, 0)
 	set_process(true)
 	find_match()
 	self.show()
 	
 func _reset():
-	LOBBY.disconnect("lobby_update", self, "match_hosted")
-	LOBBY.disconnect("join_success", self, "match_joined")
-	LOBBY.disconnect("get_lobbies", self, "matchmaking")
-	set_process(false)
-	self.hide()
+	if self.visible:
+		LOBBY._leave()
+		LOBBY.disconnect("get_lobbies", self, "matchmaking")
+		LOBBY.disconnect("lobby_update", self, "match_hosted")
+		LOBBY.disconnect("join_success", self, "match_joined")
+		set_process(false)
+		self.hide()
 
 
 # Signaling Functions --------------------------------------------------------------------------- #
@@ -72,12 +74,12 @@ func _process(delta):
 var isHosting = false
 
 func find_match():
-	LOBBY.leave()
+	LOBBY._leave()
 	LOBBY.request_lobbies(MODE, DIST)
 	isHosting = false
 
 func host_match(): 
-	LOBBY.leave()
+	LOBBY._leave()
 	LOBBY.host_lobby(MODE, TYPE)
 	isHosting = true
 
@@ -89,11 +91,6 @@ func match_hosted(status: int, msg: String):
 func match_joined(success: bool, msg: String):
 	if success: _play(msg)
 	else: _error(msg)
-
-#func match_found(status, msg: String): # Not working
-#	# Idea: Catch true and code: 1
-#	if int(status) == 1: _play(msg)
-#	else: _error(msg)
 
 
 func matchmaking(lobbies: Array):

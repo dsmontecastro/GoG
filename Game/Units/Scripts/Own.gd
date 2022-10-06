@@ -37,8 +37,8 @@ func toggle_moves(val: bool):
 	toggle_foes(!val)
 	if !val: mouse_out()
 
-	$Moves.visible = val
-	$Moves.collision_use_parent = val
+	Moves.visible = val
+	Moves.collision_use_parent = val
 
 
 
@@ -46,7 +46,8 @@ func toggle_moves(val: bool):
 
 func move_unit(_v, _e, _i):
 	if Input.is_action_just_pressed("Click"):
-		if is_processing(): send_move(get_global_mouse_position())
+		if is_processing() and USER.IS_TURN:
+			send_move(get_global_mouse_position())
 		else: toggle_moves(true)
 
 

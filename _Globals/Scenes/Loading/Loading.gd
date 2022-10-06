@@ -97,7 +97,7 @@ func change_scene(path: String):
 	THREAD.start(self, "load_scene", path)
 	
 
-const MAX_DELAY = 150000
+const MAX_DELAY = 40000
 func load_scene(path: String):
 
 	var loader = ResourceLoader.load_interactive(path)
@@ -112,7 +112,7 @@ func load_scene(path: String):
 
 			var err = loader.poll()
 
-			if err == OK:
+			if err != OK:
 
 				if err != ERR_FILE_EOF: _error(ERROR["LOADING"])
 
@@ -123,6 +123,7 @@ func load_scene(path: String):
 			#yield(get_tree(), "idle_frame")
 
 		_error(ERROR["TIMEOUT"])
+		call_deferred("load_failed")
 
 
 func start_scene(res: Resource):
@@ -144,6 +145,4 @@ func start_scene(res: Resource):
 	
 		_reset()
 
-		yield(self, "finished_exiting")
-
-		new_scene._start()
+func load_failed(): THREAD.wait_to_finish()

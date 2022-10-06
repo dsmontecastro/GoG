@@ -1,79 +1,79 @@
 extends Node
 
-const LIMIT = 32
+
+# Basic Functions ------------------------------------------------------------------------------- #
+
+var ENEMY = 0
 
 func _ready():
-	Steam.connect("p2p_session_request", self, "request")
-	Steam.connect("p2p_session_connect_fail", self, "failure")
+	Steam.connect("p2p_session_connect_fail", self, "on_failure")
+	Steam.connect("p2p_session_request", self, "on_request")
+
+func _start():
+	ENEMY = 0
+	for ID in LOBBY.MEMBERS:
+		if ID != USER.ID: ENEMY = ID
+
+func _reset(): ENEMY = 0
+
+func _process(_d): Steam.run_callbacks()
 
 
 # Initializaiton -------------------------------------------------------------------------------- #
 
 func handshake():
-	print("Sending P2P handshake to the lobby")
-	send(0, {"message": "handshake", "from": USER.ID})
+	for ID in LOBBY.MEMBERS:
+		if ID != USER.ID: send(P2P.MSSG.HANDSHAKE)
 
-
-func request(userID: int):
-
-	# Get the requester's name
-	#var REQUESTER: String = Steam.getFriendPersonaName(userID)
-
-	# Accept the P2P session; can apply logic to deny this request if needed
+func on_request(userID: int):
 	Steam.acceptP2PSessionWithUser(userID)
-
-	# Make the initial handshake
 	handshake()
 
-signal warning(message)
-func failure(id: int, err: int):
 
-	var message = "WARNING: Session failure with %d [_]." % str(id)
+func on_failure(id: int, err: int):
+
+	var message = "WARNING: Session failure with ID: %d [_]." % id
 
 	match err:
-		0: message.replace("_", "no error given")
-		1: message.replace("_", "target user not running the same game")
-		2: message.replace("_", "local user doesn't own app / game")
-		3: message.replace("_", "target user isn't connected to Steam")
-		4: message.replace("_", "connection timed out")
-		5: message.replace("_", "unused")
-		_: message.replace("_", "unknown error (Code: %d)" % err)
+		0: message.replace("_", "No error given")
+		1: message.replace("_", "Target User not running the same game")
+		2: message.replace("_", "Local User doesn't own app / game")
+		3: message.replace("_", "Target User isn't connected to Steam")
+		4: message.replace("_", "Connection timed out")
+		5: message.replace("_", "Unused")
+		_: message.replace("_", "Unknown error (Code: %d)" % err)
 
-	emit_signal("warning", message)
+	SIGNALS.emit_signal("warning", message)
 
 
-# Sending $ Receiving --------------------------------------------------------------------------- #
+# Sending & Receiving --------------------------------------------------------------------------- #
 
 const PORT = 0
 const TYPE = Steam.P2P_SEND_RELIABLE
-const empty = "Error: Empty packet!"
+const NULL = "Error: Empty packet!"
 
 
-func send(target: int, packet_data: Dictionary):
-
-	#var DATA: PoolByteArray
-	#DATA.append_array(var2bytes(packet_data))
-	var DATA: PoolByteArray = var2bytes(packet_data)
-
-	if target == 0:
-		for ID in LOBBY.MEMBERS:
-			if ID != USER.ID:
-				Steam.sendP2PPacket(ID, DATA, TYPE, PORT)
-
-	else: Steam.sendP2PPacket(target, DATA, TYPE, PORT)
+func send(msg: int, val = true):
+	var DATA = { "msg": msg, "val": val }
+	Steam.sendP2PPacket(ENEMY, var2bytes(DATA), TYPE, PORT)
+	print("Sent: ", DATA)
 
 
-func read():
+enum MSSG { HANDSHAKE, PLAY_GAME, GAME_OVER, MOVE_UNIT, KILL_UNIT }
 
-	var PACKET_SIZE: int = Steam.getAvailableP2PPacketSize(0)
+func read() -> Dictionary:
 
-	if PACKET_SIZE > 0:
+	var DATA = {}
+	var SIZE = Steam.getAvailableP2PPacketSize(PORT)
 
-		var PACKET: Dictionary = Steam.readP2PPacket(PACKET_SIZE, 0)
+	if SIZE > 0:
 
-		if PACKET.empty() or PACKET == null: emit_signal("warning", empty)
+		var PACKET: Dictionary = Steam.readP2PPacket(SIZE, 0)
+
+		if PACKET.empty() or PACKET == null:
+			SIGNALS.emit_signal("warning", NULL)
 
 		elif PACKET['steam_id_remote'] in LOBBY.MEMBERS:
+			DATA = bytes2var(PACKET['data'])
 
-			var DATA: Dictionary = bytes2var(PACKET['data'])
-			print("Packet: " + str(DATA))
+	return DATA

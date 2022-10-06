@@ -13,5 +13,6 @@ func _start(msg: String = DEF_MSG):
 	raise()
 
 func _reset():
+	SIGNALS.emit_signal("reset")
 	Message.text = ""
 	self.hide()

@@ -9,47 +9,59 @@ var foeScript = load("res://Game/Units/Scripts/Foe.gd")
 
 # Basic Functions ------------------------------------------------------------------------------- #
 
-func _ready() -> void:
-	
+func _ready():
 	SPECS = Vector2(8, 9)
-	ARRAY = ROOT.matrix(SPECS.x, SPECS.y, 0)
-
+	ARRAY = null_matrix(SPECS.x, SPECS.y)
+	if not USER.HOSTING: move_landing()
 	toggle_landing(true)
-	if !HOSTING: move_landing()
+
+func _start(): pass
+func _reset(): pass
 
 
-func _start():
+# In-game Functions ----------------------------------------------------------------------------- #
 
+func game_play():
 	toggle_landing(false)
+	ready_allies()
+	add_foes()
 
-	make_unit(-1, 0, 0) # test1
-	make_unit(-2, 0, 1) # test2
-	make_unit(-9, 1, 0) # test3
-
-	for unit in Tiles.get_children():
-
-		var type = unit.TYPE
-
-		if type > 0:
-			
-			var team = unit.TEAM
-			var dir = unit.DIR
-
-			unit._start()
-			unit.set_script(ownScript)
-
-			unit.set_type(type)
-			unit.set_team(team)
-			unit.set_dir(dir)
-			unit._ready()
+func game_reset():
+	pass
 
 
-func _reset():
-	reset_arr()
+# Setup Functions ------------------------------------------------------------------------------- #
+
+func setup_reset():
 	reset_map()
+	reset_arr()
+	setup_ready(false)
+
+func setup_ready(val: bool):
+
+	var FORM = ""
+
+	if val:
+
+		var START = 0
+		if not USER.HOSTING: START = 5
+
+		for r in range(START, START + 3):
+			for c in range(SPECS.y):
+				var type = 0
+				var unit = ARRAY[r][c]
+				if unit != null:
+					type = unit.TYPE
+				FORM += str(type)
+			FORM += "-"
+
+		FORM = FORM.left(FORM.length() - 1)
+
+	print("BSR-FORM: %s" % FORM)
+	Steam.setLobbyMemberData(LOBBY.ID, "form", FORM)
 
 
-# Toggle Landing for Drag-&-Drop ---------------------------------------------------------------- #
+# Landing Area Functions for Drag-&-Drop -------------------------------------------------------- #
 
 func move_landing():
 
@@ -70,27 +82,70 @@ func toggle_landing(val: bool) -> void:
 	else: color.a = 0
 
 	var tween = Blockade.create_tween()
-	tween.tween_property(Blockade, "modulate", color, 0.3)\
+	tween.tween_property(Blockade, "modulate", color, 0.3)
 
 
-# Reset Grid Array ------------------------------------------------------------------------------ #
+# Rescript Ally Units --------------------------------------------------------------------------- #
 
-func reset_arr():
-	for r in range(SPECS.x):
-		for c in range(SPECS.y):
-			ARRAY[r][c] = 0
+func ready_allies():
+	
+	var allies = get_tree().get_nodes_in_group("Allies")
+
+	for ally in allies:
+
+		var type = ally.TYPE
+		var team = ally.TEAM
+		var dir = ally.DIR
+
+		ally._start()
+		ally.set_script(ownScript)
+
+		ally.set_type(type)
+		ally.set_team(team)
+		ally.set_dir(dir)
+		ally._ready()
 
 
-# Make (Enemy) Units ---------------------------------------------------------------------------- #
+# Make Enemy Units ------------------------------------------------------------------------------ #
 
-func make_unit(type: int, x: int, y: int):
+func add_foes():
+
+	#var FORM = Steam.getLobbyMemberData(LOBBY.ID, P2P.ENEMY, "form")
+	var FORM = LOBBY.MEMBERS[P2P.ENEMY]["form"]
+	FORM = FORM.split("-")
+
+	print("ADD FOES (%d): %s" % [P2P.ENEMY, FORM])
+
+	var rOFF = 0
+	if USER.HOSTING: rOFF = 5
+
+	for r in range(FORM.size()):
+		var ROW = FORM[r]
+		for c in range(ROW.length()):
+			var type = int(ROW[c])
+			if type:
+				make_foe(type, r + rOFF , c)
+				yield(get_tree().create_timer(0.15), "timeout")
+
+	printGrid()
+
+
+const MINIMIZED = Vector2(0.1, 0.1)
+const NORMALIZE = Vector2(1.0, 1.0)
+func make_foe(type: int, x: int, y: int):
 
 	var unit = unitScene.instance()
 	unit.set_script(foeScript)
+	unit.scale = MINIMIZED
 	Tiles.add_child(unit)
 
-	if HOSTING: unit.swap_team()
-	unit.set_type(type)
+	if USER.HOSTING:
+		unit.swap_team()
+	unit.set_type(-type)
 
 	unit.position = get_grid_pos(x, y)
-	ARRAY[x][y] = type
+	ARRAY[x][y] = unit
+
+	var tween = unit.create_tween()
+	tween.tween_property(unit, "scale", NORMALIZE, 0.15)
+	yield(tween, "finished")

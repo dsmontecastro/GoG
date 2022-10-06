@@ -1,21 +1,22 @@
 extends Node
 
-# User: Basic Information
+# User Information
 var ID = 0
 var NAME = ""
 
-# User: Game Information
-var isHost = false
+# Basic Information
 var isOwned = false
 var isOnline = false
 
+# Game Information
+var HOSTING = false
+var READIED = false
+var IN_GAME = false
+var IS_TURN = false
 
-# Start Steamworks
-func _ready() -> void: _start()
 
-
-# Initializing Steamworks & User Info
-func _start() -> void:
+# Initialize Steamworks
+func _ready():
 
 	# Get the initialization dictionary from Steam
 	var INIT: Dictionary = Steam.steamInit()
@@ -39,13 +40,7 @@ func _start() -> void:
 
 # Initial User Values
 func _reset():
-	ID = 0
-	NAME = ""
-	isHost = false
-	isOwned = false
-	isOnline = false
-
-
-# Process all Steamworks callbacks
-func _process(_delta: float) -> void:
-	Steam.run_callbacks()
+	HOSTING = false
+	READIED = false
+	IN_GAME = false
+	IS_TURN = false

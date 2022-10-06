@@ -136,7 +136,7 @@ func move(cell: Vector2):
 	tween.tween_property(self, "position", move, 0.25)
 
 	yield(tween, "finished")
-	_reset()
+	self._reset()	# for Own.gd in Play mode
 
 	SIGNALS.emit_signal("done_moving")
 

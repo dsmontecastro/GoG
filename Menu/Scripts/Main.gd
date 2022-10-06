@@ -11,20 +11,19 @@ onready var FirstButton = $Main/VBox/Buttons/VBox/Find
 # Basic Functions ------------------------------------------------------------------------------- #
 
 func _ready():
-	_reset()
-	SIGNALS.connect("play", self, "start_game")
+	SIGNALS.connect("play", self, "_play")
+	SIGNALS.connect("reset", self, "_reset")
 	SIGNALS.connect("exit_opts", self, "opts_exit")
-
-func _start():
+	P2P._reset()
 	_resize()
-	FirstButton.grab_focus()
+	_start()
 
-func _reset(): _start()
+func _start(): FirstButton.grab_focus()
+func _reset():
+	Make._reset()
+	_start()
 
-
-#  Scene Change --------------------------------------------------------------------------------- #
-
-func start_game(msg: String):
+func _play(msg: String):
 	print(msg)
 	print(LOBBY._debug() + "\n")
 	LOADER.change_scene(LOADER.SCENE["GAME"])

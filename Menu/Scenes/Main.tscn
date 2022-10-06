@@ -66,40 +66,32 @@ size_flags_horizontal = 5
 size_flags_vertical = 3
 custom_constants/separation = 20
 
-[node name="Test" type="Button" parent="Main/VBox/Buttons/VBox"]
-margin_right = 103.0
-margin_bottom = 28.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "(Test) Play"
-
 [node name="Find" type="Button" parent="Main/VBox/Buttons/VBox"]
-margin_top = 48.0
 margin_right = 103.0
-margin_bottom = 76.0
+margin_bottom = 40.0
 focus_neighbour_top = NodePath("../Quit")
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Find a Match"
 
 [node name="Make" type="Button" parent="Main/VBox/Buttons/VBox"]
-margin_top = 96.0
+margin_top = 60.0
 margin_right = 103.0
-margin_bottom = 125.0
+margin_bottom = 101.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Custom Game"
 
 [node name="Opts" type="Button" parent="Main/VBox/Buttons/VBox"]
-margin_top = 145.0
+margin_top = 121.0
 margin_right = 103.0
-margin_bottom = 173.0
+margin_bottom = 161.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Options"
 
 [node name="Quit" type="Button" parent="Main/VBox/Buttons/VBox"]
-margin_top = 193.0
+margin_top = 181.0
 margin_right = 103.0
 margin_bottom = 222.0
 focus_neighbour_bottom = NodePath("../Find")
@@ -126,7 +118,6 @@ __meta__ = {
 }
 
 [connection signal="resized" from="." to="." method="_resize"]
-[connection signal="pressed" from="Main/VBox/Buttons/VBox/Test" to="." method="start_game" binds= [ "[TESTING]" ]]
 [connection signal="pressed" from="Main/VBox/Buttons/VBox/Find" to="." method="find"]
 [connection signal="pressed" from="Main/VBox/Buttons/VBox/Make" to="." method="make"]
 [connection signal="pressed" from="Main/VBox/Buttons/VBox/Opts" to="." method="opts"]
